@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Wordmark + mark lockup for Concept 3 (Pathway).
+  Horizontal lockup at viewBox 0 0 280 64. Mark on left, "CoachRoyale"
+  set in a generic serif (no embedded font; falls back to system serif)
+  so the wordmark reads premium / editorial. "Coach" is regular weight,
+  "Royale" is the same weight but in gold to subtly emphasize the
+  Royale category. Use this on marketing surfaces and the SPA header
+  where there's horizontal room. Use the bare mark for favicon /
+  app-icon / square social.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 64" role="img" aria-label="CoachRoyale">
+  <title>CoachRoyale</title>
+
+  <!-- Mark (Pathway), shifted to the left edge -->
+  <g transform="translate(0 0)">
+    <rect x="2" y="2" width="60" height="60" rx="14" ry="14" fill="#0a0a23"/>
+    <line x1="10" y1="50" x2="54" y2="50" stroke="#1a1a3a" stroke-width="2" stroke-linecap="round"/>
+    <path d="M10 50 L18 30 L24 38 L32 18 L40 28 L46 12 L54 50"
+          fill="none" stroke="#f0c544" stroke-width="4.5"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="18" cy="30" r="3" fill="#d4a017" stroke="#0a0a23" stroke-width="1.5"/>
+    <circle cx="32" cy="18" r="3.5" fill="#6b46c1" stroke="#0a0a23" stroke-width="1.5"/>
+    <circle cx="46" cy="12" r="3" fill="#d4a017" stroke="#0a0a23" stroke-width="1.5"/>
+    <line x1="14" y1="54" x2="50" y2="54" stroke="#d4a017" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Wordmark. Serif for editorial / premium feel.
+       Tracking is opened slightly via letter-spacing. -->
+  <g font-family="Georgia, 'Times New Roman', serif"
+     font-weight="600"
+     font-size="28"
+     dominant-baseline="middle"
+     text-rendering="optimizeLegibility">
+    <text x="76" y="34" fill="#f5f5f0" letter-spacing="0.5">Coach</text>
+    <text x="166" y="34" fill="#f0c544" letter-spacing="0.5">Royale</text>
+  </g>
+
+  <!-- Tagline rule + supporting text -->
+  <line x1="76" y1="46" x2="100" y2="46" stroke="#d4a017" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="106" y="49"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="10"
+        font-style="italic"
+        fill="#9c9cb5"
+        letter-spacing="1">
+    Coaching for the Ladder
+  </text>
+</svg>

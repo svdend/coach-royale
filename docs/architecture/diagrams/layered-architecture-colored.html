@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CoachRoyale — layered architecture (colored)</title>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --panel: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --cf: #f38020;
+      --cf-glow: rgba(243, 128, 32, 0.35);
+      --edge-api: #f97316;
+      --edge-static: #38bdf8;
+      --edge-data: #22c55e;
+      --edge-ai-ext: #a78bfa;
+      --edge-relay: #f472b6;
+      --edge-bill: #facc15;
+      --edge-byok: #818cf8;
+      --edge-internal: #fb923c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+      background: linear-gradient(165deg, #0b1220 0%, #0f172a 45%, #111827 100%);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 1.25rem 1.5rem 2.5rem;
+    }
+    header { max-width: 1180px; margin: 0 auto 1rem; }
+    h1 { font-size: 1.35rem; font-weight: 650; letter-spacing: -0.02em; margin: 0 0 0.35rem; }
+    .lede {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.55;
+      max-width: 72ch;
+    }
+    .lede code { color: #fcd34d; font-size: 0.85em; }
+    .diagram-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      background: var(--panel);
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.45);
+      overflow: hidden;
+    }
+    svg { display: block; width: 100%; height: auto; }
+    .legend {
+      max-width: 1180px;
+      margin: 1.25rem auto 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.65rem 1.25rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .legend-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .swatch {
+      width: 36px;
+      height: 5px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+    footer {
+      max-width: 1180px;
+      margin: 1.5rem auto 0;
+      font-size: 0.72rem;
+      color: #6b7280;
+      line-height: 1.5;
+    }
+    footer a { color: #93c5fd; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CoachRoyale — platform architecture (colored flows)</h1>
+    <p class="lede">
+      <strong>Netflix / Uber–style cues:</strong> dark canvas, <strong>color = domain</strong> (edge vs data vs AI vendor vs egress),
+      <strong>stroke width = primary vs secondary path</strong>, dashed lines for optional / trust-boundary crossings.
+      <strong>Workers AI</strong> is shown <em>inside</em> the Cloudflare boundary: it is invoked from the Worker via the
+      <code>AI</code> binding (<code>env.AI.run</code> in <code>apps/api-worker/src/lib/ai.ts</code>), not as a separate public internet service the browser calls.
+      <strong>Google / Discord</strong> sign-in is <code>supabase.auth.signInWithOAuth</code> in <code>apps/web/src/auth/AuthProvider.tsx</code> — browser starts at Supabase Auth, then follows redirects to the IdP (dashed fuchsia spokes).
+      Official Cloudflare logo (Wikimedia Commons). Source doc:
+      <code>docs/architecture/layered-architecture-aws-aligned.md</code>.
+    </p>
+  </header>
+
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 1100 688" role="img" aria-labelledby="svgTitle svgDesc">
+      <title id="svgTitle">CoachRoyale architecture with colored request paths</title>
+      <desc id="svgDesc">Cloudflare region contains Pages, Worker, and Workers AI. Colored arrows show browser API, static assets, Supabase, AI providers, relay, billing, and optional BYOK.</desc>
+
+      <defs>
+        <marker id="arrow-api" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#f97316" />
+        </marker>
+        <marker id="arrow-static" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#38bdf8" />
+        </marker>
+        <marker id="arrow-data" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#22c55e" />
+        </marker>
+        <marker id="arrow-ai" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#a78bfa" />
+        </marker>
+        <marker id="arrow-relay" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#f472b6" />
+        </marker>
+        <marker id="arrow-bill" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#facc15" />
+        </marker>
+        <marker id="arrow-byok" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#818cf8" />
+        </marker>
+        <marker id="arrow-internal" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#fb923c" />
+        </marker>
+        <marker id="arrow-custom" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#2dd4bf" />
+        </marker>
+        <marker id="arrow-idp" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+          <polygon points="0 0, 8 3, 0 6" fill="#f0abfc" />
+        </marker>
+        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="4" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+
+      <!-- Subtle grid -->
+      <g opacity="0.06" stroke="#fff" stroke-width="0.5">
+        <path d="M0 80 H1100 M0 160 H1100 M0 240 H1100 M0 320 H1100 M0 400 H1100 M0 480 H1100 M0 560 H1100 M0 640 H1100" />
+        <path d="M80 0 V640 M160 0 V640 M240 0 V640 M320 0 V640 M400 0 V640 M480 0 V640 M560 0 V640 M640 0 V640 M720 0 V640 M800 0 V640 M880 0 V640 M960 0 V640 M1040 0 V640" />
+      </g>
+
+      <!-- User -->
+      <circle cx="95" cy="300" r="22" fill="#1e293b" stroke="#64748b" stroke-width="2" />
+      <text x="95" y="306" text-anchor="middle" fill="#e2e8f0" font-size="11" font-weight="600">User</text>
+
+      <!-- Browser -->
+      <rect x="40" y="140" width="150" height="100" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1.5" />
+      <text x="115" y="168" text-anchor="middle" fill="#f1f5f9" font-size="12" font-weight="600">Browser</text>
+      <text x="115" y="188" text-anchor="middle" fill="#94a3b8" font-size="9">React SPA</text>
+      <text x="115" y="208" text-anchor="middle" fill="#94a3b8" font-size="9">apps/web</text>
+
+      <!-- BYOK (optional) -->
+      <rect x="40" y="520" width="150" height="72" rx="10" fill="#1e1b4b" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="5 4" />
+      <text x="115" y="548" text-anchor="middle" fill="#c7d2fe" font-size="11" font-weight="600">BYOK endpoint</text>
+      <text x="115" y="568" text-anchor="middle" fill="#a5b4fc" font-size="8">browser-direct</text>
+
+      <!-- Cloudflare platform boundary -->
+      <rect x="260" y="48" width="520" height="456" rx="18" fill="rgba(243,128,32,0.06)" stroke="#f38020" stroke-width="2.5" filter="url(#glow)" />
+      <image href="https://upload.wikimedia.org/wikipedia/commons/4/4b/Cloudflare_Logo.svg" x="278" y="62" width="112" height="34" preserveAspectRatio="xMidYMid meet" />
+      <text x="400" y="84" fill="#fdba74" font-size="13" font-weight="700" letter-spacing="0.04em">CLOUDFLARE PLATFORM</text>
+      <text x="400" y="100" fill="#9ca3af" font-size="9">Pages + Worker + Workers AI (same vendor, nested runtime)</text>
+
+      <!-- Pages -->
+      <rect x="290" y="118" width="200" height="76" rx="10" fill="#0c4a6e" stroke="#38bdf8" stroke-width="1.5" />
+      <text x="390" y="148" text-anchor="middle" fill="#e0f2fe" font-size="12" font-weight="600">Cloudflare Pages</text>
+      <text x="390" y="168" text-anchor="middle" fill="#7dd3fc" font-size="9">static SPA assets</text>
+
+      <!-- Worker shell -->
+      <rect x="290" y="218" width="460" height="118" rx="10" fill="#1c1917" stroke="#fb923c" stroke-width="2" />
+      <text x="520" y="248" text-anchor="middle" fill="#ffedd5" font-size="13" font-weight="700">Worker BFF (Hono)</text>
+      <text x="520" y="268" text-anchor="middle" fill="#fdba74" font-size="9">apps/api-worker · index.ts + lib/*</text>
+      <text x="520" y="290" text-anchor="middle" fill="#9ca3af" font-size="8">Routes, CORS, auth to Supabase, orchestration</text>
+
+      <!-- Workers AI nested INSIDE Cloudflare / under Worker conceptually -->
+      <rect x="310" y="358" width="420" height="118" rx="10" fill="#431407" stroke="#fb923c" stroke-width="2.5" />
+      <text x="520" y="388" text-anchor="middle" fill="#ffedd5" font-size="12" font-weight="700">Workers AI + AI Gateway</text>
+      <text x="520" y="408" text-anchor="middle" fill="#fdba74" font-size="9">Cloudflare inference · binding &quot;AI&quot; on Worker</text>
+      <text x="520" y="428" text-anchor="middle" fill="#9ca3af" font-size="8">env.AI.run — not a separate SaaS box outside CF</text>
+      <text x="520" y="454" text-anchor="middle" fill="#78716c" font-size="7.5">wrangler [ai] binding · optional AI_GATEWAY_ID</text>
+
+      <!-- Internal CF path: Worker → Workers AI (same platform; AI binding) -->
+      <path d="M 520 336 L 520 358" stroke="#fb923c" stroke-width="5.5" marker-end="url(#arrow-internal)" />
+
+      <!-- External column -->
+      <!-- Federated IdPs (OAuth 2.0 via Supabase broker) -->
+      <rect x="738" y="52" width="102" height="42" rx="8" fill="#172554" stroke="#ea4335" stroke-width="1.5" />
+      <text x="789" y="72" text-anchor="middle" fill="#fecaca" font-size="10" font-weight="600">Google</text>
+      <text x="789" y="86" text-anchor="middle" fill="#fca5a5" font-size="7">OAuth / OIDC</text>
+
+      <rect x="854" y="52" width="102" height="42" rx="8" fill="#1e1b4b" stroke="#5865f2" stroke-width="1.5" />
+      <text x="905" y="72" text-anchor="middle" fill="#c7d2fe" font-size="10" font-weight="600">Discord</text>
+      <text x="905" y="86" text-anchor="middle" fill="#a5b4fc" font-size="7">OAuth / OIDC</text>
+
+      <rect x="840" y="108" width="230" height="78" rx="10" fill="#052e16" stroke="#22c55e" stroke-width="1.5" />
+      <text x="955" y="134" text-anchor="middle" fill="#bbf7d0" font-size="11" font-weight="600">Supabase</text>
+      <text x="955" y="152" text-anchor="middle" fill="#86efac" font-size="8">Auth + Postgres</text>
+      <text x="955" y="170" text-anchor="middle" fill="#6ee7b7" font-size="7.5">Federated OAuth broker for Google / Discord</text>
+
+      <rect x="840" y="200" width="230" height="72" rx="10" fill="#2e1065" stroke="#a78bfa" stroke-width="1.5" />
+      <text x="955" y="230" text-anchor="middle" fill="#ede9fe" font-size="11" font-weight="600">Anthropic</text>
+      <text x="955" y="248" text-anchor="middle" fill="#c4b5fd" font-size="8">Claude API</text>
+
+      <rect x="840" y="288" width="230" height="72" rx="10" fill="#134e4a" stroke="#2dd4bf" stroke-width="1.5" />
+      <text x="955" y="318" text-anchor="middle" fill="#ccfbf1" font-size="11" font-weight="600">Operator model</text>
+      <text x="955" y="336" text-anchor="middle" fill="#5eead4" font-size="8">HTTPS OpenAI-compatible</text>
+
+      <rect x="840" y="376" width="230" height="72" rx="10" fill="#422006" stroke="#facc15" stroke-width="1.5" />
+      <text x="955" y="406" text-anchor="middle" fill="#fef9c3" font-size="11" font-weight="600">Lemon Squeezy</text>
+      <text x="955" y="424" text-anchor="middle" fill="#fde047" font-size="8">billing + webhooks</text>
+
+      <rect x="840" y="464" width="110" height="72" rx="10" fill="#4c0519" stroke="#f472b6" stroke-width="1.5" />
+      <text x="895" y="494" text-anchor="middle" fill="#fce7f3" font-size="10" font-weight="600">Relay</text>
+      <text x="895" y="512" text-anchor="middle" fill="#fbcfe8" font-size="7.5">FastAPI VPS</text>
+
+      <rect x="960" y="464" width="110" height="72" rx="10" fill="#1e1b4b" stroke="#94a3b8" stroke-width="1.5" />
+      <text x="1015" y="494" text-anchor="middle" fill="#e2e8f0" font-size="10" font-weight="600">Supercell</text>
+      <text x="1015" y="512" text-anchor="middle" fill="#94a3b8" font-size="7.5">game API</text>
+
+      <path d="M 950 500 L 960 500" stroke="#f472b6" stroke-width="3" marker-end="url(#arrow-relay)" />
+
+      <!-- Supabase Auth brokers OAuth to Google + Discord (signInWithOAuth) -->
+      <path d="M 900 108 Q 850 88 789 94" stroke="#f0abfc" stroke-width="2.2" fill="none" stroke-dasharray="5 4" marker-end="url(#arrow-idp)" />
+      <path d="M 1010 108 Q 1050 88 905 94" stroke="#f0abfc" stroke-width="2.2" fill="none" stroke-dasharray="5 4" marker-end="url(#arrow-idp)" />
+      <!-- Browser follows IdP redirects during OAuth (same window / tab) -->
+      <path d="M 175 200 Q 400 40 780 73" stroke="#fda4af" stroke-width="2" fill="none" stroke-dasharray="6 4" opacity="0.9" />
+      <path d="M 175 205 Q 520 25 905 73" stroke="#fda4af" stroke-width="2" fill="none" stroke-dasharray="6 4" opacity="0.9" />
+
+      <!-- Edges from browser -->
+      <!-- User to browser -->
+      <path d="M 95 278 Q 95 220 115 200" stroke="#64748b" stroke-width="2" fill="none" />
+      <!-- Browser to Pages: static -->
+      <path d="M 190 170 Q 240 150 290 156" stroke="#38bdf8" stroke-width="3.5" fill="none" marker-end="url(#arrow-static)" />
+      <!-- Browser to Worker: primary API thick -->
+      <path d="M 190 210 Q 230 240 290 270" stroke="#f97316" stroke-width="6" fill="none" marker-end="url(#arrow-api)" opacity="0.95" />
+      <!-- Browser to Supabase (OAuth start, session, profile reads) -->
+      <path d="M 190 198 Q 520 52 900 138" stroke="#22c55e" stroke-width="3.5" fill="none" marker-end="url(#arrow-data)" />
+      <!-- Browser to BYOK dashed -->
+      <path d="M 115 240 L 115 518" stroke="#818cf8" stroke-width="2.5" fill="none" stroke-dasharray="8 5" marker-end="url(#arrow-byok)" />
+
+      <!-- Worker to externals -->
+      <path d="M 750 270 Q 800 210 900 145" stroke="#22c55e" stroke-width="4" fill="none" marker-end="url(#arrow-data)" />
+      <path d="M 750 272 Q 810 240 900 236" stroke="#a78bfa" stroke-width="3.5" fill="none" marker-end="url(#arrow-ai)" />
+      <path d="M 750 280 Q 820 280 900 324" stroke="#2dd4bf" stroke-width="3" fill="none" marker-end="url(#arrow-custom)" />
+      <path d="M 750 288 Q 830 330 900 412" stroke="#facc15" stroke-width="2.5" fill="none" marker-end="url(#arrow-bill)" />
+      <path d="M 750 296 Q 840 380 880 500" stroke="#f472b6" stroke-width="3.5" fill="none" marker-end="url(#arrow-relay)" />
+
+      <!-- Title block -->
+      <text x="40" y="32" fill="#f8fafc" font-size="15" font-weight="700">Request &amp; data flows</text>
+      <text x="40" y="50" fill="#64748b" font-size="9">Stroke width ∝ primary path · dashed pink = OAuth broker / IdP redirects</text>
+    </svg>
+  </div>
+
+  <div class="legend" aria-label="Edge color legend">
+    <div class="legend-row"><span class="swatch" style="background:#f97316;width:48px;height:6px"></span><span><strong>Primary BFF</strong> — browser → Worker (JWT)</span></div>
+    <div class="legend-row"><span class="swatch" style="background:#38bdf8"></span><span><strong>Static edge</strong> — browser → Pages</span></div>
+    <div class="legend-row"><span class="swatch" style="background:#fb923c"></span><span><strong>Cloudflare internal</strong> — Worker → Workers AI binding</span></div>
+    <div class="legend-row"><span class="swatch" style="background:#22c55e"></span><span><strong>Data plane</strong> — SPA/Worker → Supabase</span></div>
+    <div class="legend-row"><span class="swatch" style="background:#a78bfa"></span><span><strong>Managed LLM vendor</strong> — Worker → Anthropic</span></div>
+    <div class="legend-row"><span class="swatch" style="background:#2dd4bf"></span><span><strong>Custom model</strong> — Worker → operator HTTPS</span></div>
+    <div class="legend-row"><span class="swatch" style="background:#facc15"></span><span><strong>Commerce</strong> — Worker → Lemon Squeezy</span></div>
+    <div class="legend-row"><span class="swatch" style="background:#f472b6"></span><span><strong>Static-IP egress</strong> — Worker → Relay → Supercell</span></div>
+    <div class="legend-row"><span class="swatch" style="background:#818cf8"></span><span><strong>BYOK (optional)</strong> — browser only, dashed</span></div>
+    <div class="legend-row"><span class="swatch" style="background:#f0abfc;height:4px;border:1px dashed #fda4af"></span><span><strong>OAuth broker</strong> — Supabase ↔ Google / Discord (<code>signInWithOAuth</code>)</span></div>
+    <div class="legend-row"><span class="swatch" style="background:#fda4af;height:4px;border:1px dashed #fb7185"></span><span><strong>IdP redirect</strong> — browser tab follows Google / Discord during login</span></div>
+  </div>
+
+  <footer>
+    <strong>Why this differs from a generic Mermaid box diagram:</strong> tier-1 platform teams (Netflix playback vs control paths, Uber mesh + domain-colored RPC diagrams) typically separate
+    <em>control / API</em> from <em>data / async</em> and use <strong>weight + hue</strong> so reviewers can scan risk in seconds. Here, <strong>Workers AI</strong> is nested under the same vendor boundary as the Worker because it is a Cloudflare runtime binding, not a third-party box peer to “Cloudflare.”
+    Logo: <a href="https://commons.wikimedia.org/wiki/File:Cloudflare_Logo.svg" rel="noopener">Wikimedia Commons — Cloudflare_Logo.svg</a> (trademark Cloudflare, Inc.).
+  </footer>
+</body>
+</html>

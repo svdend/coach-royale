@@ -1,0 +1,72 @@
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+src = ["prototype/backend"]
+
+[tool.ruff.lint]
+# PEP 8 + pyflakes + isort + Google style guide subset + DRY helpers
+select = [
+    "E",    # pycodestyle errors (PEP 8)
+    "W",    # pycodestyle warnings
+    "F",    # pyflakes (unused imports, undefined names)
+    "I",    # isort (import ordering)
+    "N",    # pep8-naming (snake_case, UPPER_CONST, etc.)
+    "UP",   # pyupgrade (modern Python idioms)
+    "B",    # flake8-bugbear (common bugs + design issues)
+    "C4",   # flake8-comprehensions (prefer comprehensions — functional style)
+    "SIM",  # flake8-simplify (reduce complexity, DRY)
+    "RET",  # flake8-return (clean return statements)
+    "PIE",  # flake8-pie (miscellaneous best practices)
+    "T20",  # flake8-print (no stray print() in production code)
+    "PTH",  # flake8-use-pathlib (prefer Path over os.path)
+    "ERA",  # eradicate (no commented-out dead code)
+    "PL",   # pylint subset
+    "PERF", # perflint (performance anti-patterns)
+    "FURB", # refurb (modern Python rewrites)
+]
+ignore = [
+    "E501",    # line length — handled by ruff-format
+    "B008",    # FastAPI depends on function calls in defaults
+    "PLR0913", # too many arguments — analytics functions need them
+    "PLR2004", # magic values — domain constants (HTTP codes, thresholds)
+    "T201",    # allow print() in scripts/tests
+    "ERA001",  # SQL `--` comments misidentified as dead code
+    "RET504",  # intermediate variable before return aids readability
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["analytics", "database", "coaching_orchestrator", "database_supabase"]
+
+[tool.ruff.lint.per-file-ignores]
+# Tests: allow magic values, prints, nested-with, top-level imports, Path.open
+"**/tests/**" = ["T20", "PLR2004", "SIM117", "PLC0415", "PLW", "PTH123"]
+"*test_api*"  = ["SIM117", "T20"]  # script file — nested with is intentional
+# Supabase analytics: archetype classifier + analytics fn are inherently complex
+"*database_supabase*" = ["PLR0911", "PLR0912", "PLR0915", "E701"]
+# main.py: archetype helper has many returns; lazy imports are intentional
+"*main*" = ["E701", "PLR0911", "PLC0415"]
+
+[tool.ruff.format]
+# Google style: double quotes, trailing commas
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+
+# ── Bandit security config ────────────────────────────────────────────────────
+[tool.bandit]
+exclude_dirs = ["tests", ".venv"]
+skips = [
+    "B101",   # assert in tests is fine
+    "B104",   # binding to 0.0.0.0 is intentional for local dev
+]
+# Flag high + medium severity issues
+level = "MEDIUM"
+confidence = "MEDIUM"
+
+# ── Pytest ────────────────────────────────────────────────────────────────────
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]

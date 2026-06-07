@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CoachRoyale — layered architecture (preview)</title>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({ startOnLoad: true, theme: "neutral", flowchart: { curve: "basis" } });</script>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 1rem; max-width: 1200px; }
+    h1 { font-size: 1.15rem; }
+    p { color: #444; font-size: 0.9rem; }
+    .mermaid { margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>Layered architecture (AWS-style layout)</h1>
+  <p>Source: <code>docs/architecture/layered-architecture-aws-aligned.md</code> §4 — solid = sync HTTP on primary path; dashed = BYOK bypasses Worker.</p>
+  <div class="mermaid">
+flowchart LR
+  subgraph L0["L0 Actor"]
+    U((User))
+  end
+
+  subgraph L1["L1 Presentation — apps/web"]
+    SPA[React SPA\nApp.tsx + routes]
+    SBCL[Supabase client\nlib/supabase.ts]
+  end
+
+  subgraph L2["L2 Edge — Cloudflare"]
+    PAGES[Pages\nstatic assets]
+    EDGE[Hono Worker shell\nindex.ts — CORS, headers, request ID]
+  end
+
+  subgraph L3["L3 Application modules — apps/api-worker/src/lib"]
+    direction TB
+    R[relay.ts]
+    AI[ai.ts + provider-routing.ts]
+    AG[agent.ts + tools.ts]
+    PAY[payments.ts]
+    DB[supabase.ts]
+    CH[coach-threads.ts]
+    AN[analytics.ts\nbattles.ts tags.ts]
+  end
+
+  subgraph L4["L4 Data — Supabase"]
+    AUTH[(Auth)]
+    PG[(Postgres)]
+  end
+
+  subgraph L5["L5 External integrations"]
+    WAI[Workers AI\n+ AI Gateway]
+    ANT[Anthropic]
+    OPMODEL[Operator custom model\nHTTPS OpenAI-compatible]
+    BYOKEND[User BYOK endpoint\nbrowser-supplied URL]
+    LS[Lemon Squeezy]
+    REL[VPS Relay\nFastAPI]
+    SC[Supercell API]
+  end
+
+  U -->|1| SPA
+  SPA -->|2| PAGES
+  SPA -->|3 HTTPS + Bearer| EDGE
+  SPA -.->|4 optional BYOK| BYOKEND
+
+  SPA -->|5 OAuth / profile| SBCL
+  SBCL -->|6| AUTH
+  SBCL -->|7| PG
+
+  EDGE --> R
+  EDGE --> AI
+  EDGE --> AG
+  EDGE --> PAY
+  EDGE --> DB
+  EDGE --> CH
+  EDGE --> AN
+
+  DB --> AUTH
+  DB --> PG
+
+  AI --> WAI
+  AI --> ANT
+  AI --> OPMODEL
+  AG --> ANT
+  PAY --> LS
+  R --> REL
+  REL --> SC
+  </div>
+</body>
+</html>

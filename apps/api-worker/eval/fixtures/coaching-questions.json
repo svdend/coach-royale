@@ -1,0 +1,322 @@
+{
+  "$schema_note": "Each item: {id, playerTag, question, fixture: {player, battles, clan?}, expectations: {mustMentionTools?, mustContainSubstrings?, mustNotHallucinateTokens?}}. The fixture drives the mocked relay responses; expectations drive the rule-based judge.",
+  "questions": [
+    {
+      "id": "q01-trophy-count",
+      "playerTag": "#ABC123",
+      "question": "What's my current trophy count and when did I start this season?",
+      "fixture": {
+        "player": {
+          "tag": "#ABC123",
+          "name": "EvalPlayer",
+          "trophies": 6280,
+          "bestTrophies": 7150,
+          "expLevel": 14,
+          "wins": 1204,
+          "losses": 1098,
+          "battleCount": 3402,
+          "threeCrownWins": 251,
+          "arena": { "id": 54000019, "name": "Legendary Arena" },
+          "currentDeck": [
+            { "name": "Hog Rider" },
+            { "name": "Musketeer" },
+            { "name": "Ice Spirit" },
+            { "name": "Cannon" },
+            { "name": "Log" },
+            { "name": "Skeletons" },
+            { "name": "Fireball" },
+            { "name": "Ice Golem" }
+          ]
+        },
+        "battles": []
+      },
+      "expectations": {
+        "mustMentionTools": ["get_player_profile"],
+        "mustContainSubstrings": ["6280"]
+      }
+    },
+    {
+      "id": "q02-xbow-matchup",
+      "playerTag": "#DEF456",
+      "question": "Why do I keep losing to X.Bow decks? Look at my recent battles.",
+      "fixture": {
+        "player": {
+          "tag": "#DEF456",
+          "name": "EvalPlayer2",
+          "trophies": 5800,
+          "currentDeck": [
+            { "name": "Hog Rider" },
+            { "name": "Musketeer" },
+            { "name": "Ice Spirit" },
+            { "name": "Cannon" },
+            { "name": "Log" },
+            { "name": "Skeletons" },
+            { "name": "Fireball" },
+            { "name": "Ice Golem" }
+          ]
+        },
+        "battles": [
+          {
+            "type": "PvP",
+            "battleTime": "20260420T120000.000Z",
+            "gameMode": { "id": 72000006, "name": "Ladder" },
+            "team": [
+              {
+                "tag": "#DEF456",
+                "name": "EvalPlayer2",
+                "crowns": 0,
+                "trophyChange": -30,
+                "cards": [
+                  { "name": "Hog Rider" },
+                  { "name": "Musketeer" },
+                  { "name": "Ice Spirit" },
+                  { "name": "Cannon" },
+                  { "name": "Log" },
+                  { "name": "Skeletons" },
+                  { "name": "Fireball" },
+                  { "name": "Ice Golem" }
+                ]
+              }
+            ],
+            "opponent": [
+              {
+                "tag": "#XBOW1",
+                "name": "XBowMaster",
+                "crowns": 2,
+                "trophyChange": 30,
+                "cards": [
+                  { "name": "X-Bow" },
+                  { "name": "Tesla" },
+                  { "name": "Ice Spirit" },
+                  { "name": "Skeletons" },
+                  { "name": "Log" },
+                  { "name": "Archers" },
+                  { "name": "Fireball" },
+                  { "name": "Knight" }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "PvP",
+            "battleTime": "20260420T130000.000Z",
+            "gameMode": { "id": 72000006, "name": "Ladder" },
+            "team": [
+              {
+                "tag": "#DEF456",
+                "name": "EvalPlayer2",
+                "crowns": 0,
+                "trophyChange": -30,
+                "cards": [
+                  { "name": "Hog Rider" },
+                  { "name": "Musketeer" },
+                  { "name": "Ice Spirit" },
+                  { "name": "Cannon" },
+                  { "name": "Log" },
+                  { "name": "Skeletons" },
+                  { "name": "Fireball" },
+                  { "name": "Ice Golem" }
+                ]
+              }
+            ],
+            "opponent": [
+              {
+                "tag": "#XBOW2",
+                "name": "XBowKing",
+                "crowns": 1,
+                "trophyChange": 30,
+                "cards": [
+                  { "name": "X-Bow" },
+                  { "name": "Tesla" },
+                  { "name": "Fire Spirit" },
+                  { "name": "Skeletons" },
+                  { "name": "Log" },
+                  { "name": "Archers" },
+                  { "name": "Rocket" },
+                  { "name": "Knight" }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "expectations": {
+        "mustMentionTools": ["get_recent_battles"],
+        "mustContainSubstrings": ["X-Bow"]
+      }
+    },
+    {
+      "id": "q03-deck-stability",
+      "playerTag": "#GHI789",
+      "question": "Am I switching decks too much? What's my deck stability?",
+      "fixture": {
+        "player": {
+          "tag": "#GHI789",
+          "name": "DeckSwitcher",
+          "trophies": 5500,
+          "currentDeck": [
+            { "name": "Hog Rider" },
+            { "name": "Musketeer" },
+            { "name": "Ice Spirit" },
+            { "name": "Cannon" },
+            { "name": "Log" },
+            { "name": "Skeletons" },
+            { "name": "Fireball" },
+            { "name": "Ice Golem" }
+          ]
+        },
+        "battles": []
+      },
+      "expectations": {
+        "mustMentionTools": ["get_deck_stats"],
+        "mustContainSubstrings": ["deck"]
+      }
+    },
+    {
+      "id": "q04-clan-context",
+      "playerTag": "#JKL012",
+      "question": "Should I switch clans? What's my current clan like?",
+      "fixture": {
+        "player": {
+          "tag": "#JKL012",
+          "name": "ClanCurious",
+          "trophies": 5900,
+          "clan": { "tag": "#CLAN1", "name": "Thinkers", "role": "member" },
+          "currentDeck": [
+            { "name": "Hog Rider" },
+            { "name": "Musketeer" },
+            { "name": "Ice Spirit" },
+            { "name": "Cannon" },
+            { "name": "Log" },
+            { "name": "Skeletons" },
+            { "name": "Fireball" },
+            { "name": "Ice Golem" }
+          ]
+        },
+        "battles": [],
+        "clan": {
+          "tag": "#CLAN1",
+          "name": "Thinkers",
+          "description": "A chill clan for laddering.",
+          "type": "open",
+          "members": 35,
+          "clanWarTrophies": 2800,
+          "requiredTrophies": 4500,
+          "donationsPerWeek": 5200
+        }
+      },
+      "expectations": {
+        "mustMentionTools": ["get_clan_info"],
+        "mustContainSubstrings": ["Thinkers"]
+      }
+    },
+    {
+      "id": "q05-analytics-summary",
+      "playerTag": "#MNO345",
+      "question": "Give me an overall summary of my performance and where I should focus.",
+      "fixture": {
+        "player": {
+          "tag": "#MNO345",
+          "name": "OverallFocus",
+          "trophies": 6100,
+          "currentDeck": [
+            { "name": "Hog Rider" },
+            { "name": "Musketeer" },
+            { "name": "Ice Spirit" },
+            { "name": "Cannon" },
+            { "name": "Log" },
+            { "name": "Skeletons" },
+            { "name": "Fireball" },
+            { "name": "Ice Golem" }
+          ]
+        },
+        "battles": []
+      },
+      "expectations": {
+        "mustMentionTools": ["get_player_analytics"],
+        "mustContainSubstrings": []
+      }
+    },
+    {
+      "id": "q06-win-rate-trend",
+      "playerTag": "#PQR678",
+      "question": "Has my win rate been going up or down recently?",
+      "fixture": {
+        "player": {
+          "tag": "#PQR678",
+          "name": "TrendHunter",
+          "trophies": 6000,
+          "currentDeck": [
+            { "name": "Hog Rider" },
+            { "name": "Musketeer" },
+            { "name": "Ice Spirit" },
+            { "name": "Cannon" },
+            { "name": "Log" },
+            { "name": "Skeletons" },
+            { "name": "Fireball" },
+            { "name": "Ice Golem" }
+          ]
+        },
+        "battles": []
+      },
+      "expectations": {
+        "mustMentionTools": ["get_player_analytics"],
+        "mustContainSubstrings": []
+      }
+    },
+    {
+      "id": "q07-matchup-worst",
+      "playerTag": "#STU901",
+      "question": "Which archetype am I worst against?",
+      "fixture": {
+        "player": {
+          "tag": "#STU901",
+          "name": "MatchupCurious",
+          "trophies": 5700,
+          "currentDeck": [
+            { "name": "Hog Rider" },
+            { "name": "Musketeer" },
+            { "name": "Ice Spirit" },
+            { "name": "Cannon" },
+            { "name": "Log" },
+            { "name": "Skeletons" },
+            { "name": "Fireball" },
+            { "name": "Ice Golem" }
+          ]
+        },
+        "battles": []
+      },
+      "expectations": {
+        "mustMentionTools": ["get_matchup_breakdown"],
+        "mustContainSubstrings": []
+      }
+    },
+    {
+      "id": "q08-generic-greeting",
+      "playerTag": "#VWX234",
+      "question": "Hello!",
+      "fixture": {
+        "player": {
+          "tag": "#VWX234",
+          "name": "Greeter",
+          "trophies": 5000,
+          "currentDeck": [
+            { "name": "Hog Rider" },
+            { "name": "Musketeer" },
+            { "name": "Ice Spirit" },
+            { "name": "Cannon" },
+            { "name": "Log" },
+            { "name": "Skeletons" },
+            { "name": "Fireball" },
+            { "name": "Ice Golem" }
+          ]
+        },
+        "battles": []
+      },
+      "expectations": {
+        "mustMentionTools": [],
+        "mustContainSubstrings": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1400" height="900" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" font-family="SF Pro Display, -apple-system, Helvetica Neue, sans-serif">
+
+  <!-- Background -->
+  <rect width="1400" height="900" fill="#0A0A0F"/>
+  <text x="700" y="35" text-anchor="middle" fill="#F5A623" font-size="22" font-weight="700" letter-spacing="2">ClashCoach AI — macOS App</text>
+
+  <!-- Mac window frame -->
+  <rect x="20" y="55" width="1360" height="830" rx="12" fill="#161621" stroke="#333350" stroke-width="1.5"/>
+
+  <!-- Title bar -->
+  <rect x="20" y="55" width="1360" height="36" rx="12" fill="#1C1C2E"/>
+  <rect x="20" y="67" width="1360" height="24" fill="#1C1C2E"/>
+  <!-- Traffic lights -->
+  <circle cx="50" cy="73" r="7" fill="#FF5F57"/>
+  <circle cx="72" cy="73" r="7" fill="#FEBC2E"/>
+  <circle cx="94" cy="73" r="7" fill="#28C840"/>
+  <text x="700" y="79" text-anchor="middle" fill="#888" font-size="11">ClashCoach AI — ZeroKing_CR</text>
+
+  <!-- ============ SIDEBAR ============ -->
+  <rect x="20" y="91" width="200" height="794" fill="#111119"/>
+
+  <!-- Profile -->
+  <rect x="20" y="91" width="200" height="90" fill="#161626"/>
+  <circle cx="75" cy="126" r="22" fill="#F5A623"/>
+  <text x="75" y="131" text-anchor="middle" fill="#0A0A0F" font-size="14" font-weight="800">ZK</text>
+  <text x="105" y="118" fill="#FFFFFF" font-size="11" font-weight="700">ZeroKing_CR</text>
+  <text x="105" y="132" fill="#F5A623" font-size="9">7,842 🏆</text>
+  <text x="105" y="145" fill="#888" font-size="8">Path of Legends</text>
+
+  <!-- Nav items -->
+  <!-- Active: Home -->
+  <rect x="20" y="186" width="200" height="36" fill="#F5A62318"/>
+  <rect x="20" y="186" width="3" height="36" fill="#F5A623"/>
+  <text x="48" y="208" fill="#F5A623" font-size="14">⊞</text>
+  <text x="68" y="208" fill="#F5A623" font-size="11" font-weight="600">Dashboard</text>
+
+  <rect x="20" y="226" width="200" height="36" fill="transparent"/>
+  <text x="48" y="248" fill="#666" font-size="14">⚔</text>
+  <text x="68" y="248" fill="#888" font-size="11">My Battles</text>
+
+  <rect x="20" y="262" width="200" height="36" fill="transparent"/>
+  <text x="48" y="284" fill="#666" font-size="14">💬</text>
+  <text x="68" y="284" fill="#888" font-size="11">AI Coach</text>
+
+  <rect x="20" y="298" width="200" height="36" fill="transparent"/>
+  <text x="48" y="320" fill="#666" font-size="14">📈</text>
+  <text x="68" y="320" fill="#888" font-size="11">Meta Trends</text>
+
+  <rect x="20" y="334" width="200" height="36" fill="transparent"/>
+  <text x="48" y="356" fill="#666" font-size="14">🃏</text>
+  <text x="68" y="356" fill="#888" font-size="11">Deck Lab</text>
+
+  <rect x="20" y="370" width="200" height="36" fill="transparent"/>
+  <text x="48" y="392" fill="#666" font-size="14">👤</text>
+  <text x="68" y="392" fill="#888" font-size="11">Profile</text>
+
+  <!-- Divider -->
+  <line x1="36" y1="416" x2="204" y2="416" stroke="#252538" stroke-width="1"/>
+
+  <text x="36" y="436" fill="#555" font-size="9" font-weight="600" letter-spacing="1">SEASON 62</text>
+  <rect x="36" y="442" width="164" height="28" rx="6" fill="#1E1E32"/>
+  <text x="46" y="460" fill="#888" font-size="8">Progress to Champions</text>
+  <rect x="36" y="474" width="164" height="6" rx="3" fill="#252538"/>
+  <rect x="36" y="474" width="112" height="6" rx="3" fill="#F5A623"/>
+  <text x="204" y="480" fill="#F5A623" font-size="8" text-anchor="end">68%</text>
+
+  <!-- Subscription badge -->
+  <rect x="36" y="760" width="164" height="36" rx="10" fill="#F5A62315" stroke="#F5A623" stroke-width="0.5"/>
+  <text x="118" y="776" text-anchor="middle" fill="#F5A623" font-size="10" font-weight="700">⚡ Pro Plan</text>
+  <text x="118" y="790" text-anchor="middle" fill="#888" font-size="8">Unlimited coaching</text>
+
+  <rect x="36" y="806" width="164" height="30" rx="8" fill="#1E1E32"/>
+  <text x="118" y="825" text-anchor="middle" fill="#888" font-size="9">⚙ Settings</text>
+
+  <!-- ============ MAIN CONTENT ============ -->
+  <!-- Top stats bar -->
+  <rect x="220" y="91" width="1160" height="80" fill="#0F0F1A"/>
+  <text x="240" y="118" fill="#888" font-size="10" font-weight="600" letter-spacing="1.5">PERFORMANCE OVERVIEW · LAST 7 DAYS</text>
+
+  <!-- Stat cards row -->
+  <!-- Card 1: Win Rate -->
+  <rect x="240" y="126" width="170" height="38" rx="8" fill="#1E1E32"/>
+  <text x="254" y="141" fill="#888" font-size="8">WIN RATE</text>
+  <text x="254" y="157" fill="#4CAF50" font-size="18" font-weight="800">63.2%</text>
+  <text x="380" y="141" fill="#4CAF50" font-size="8" text-anchor="end">↑ +3.1%</text>
+
+  <!-- Card 2: Battles -->
+  <rect x="420" y="126" width="170" height="38" rx="8" fill="#1E1E32"/>
+  <text x="434" y="141" fill="#888" font-size="8">BATTLES</text>
+  <text x="434" y="157" fill="#FFFFFF" font-size="18" font-weight="800">47</text>
+  <text x="580" y="141" fill="#888" font-size="8" text-anchor="end">32W · 15L</text>
+
+  <!-- Card 3: Trophies -->
+  <rect x="600" y="126" width="170" height="38" rx="8" fill="#1E1E32"/>
+  <text x="614" y="141" fill="#888" font-size="8">TROPHIES</text>
+  <text x="614" y="157" fill="#F5A623" font-size="18" font-weight="800">7,842</text>
+  <text x="760" y="141" fill="#F5A623" font-size="8" text-anchor="end">↑ +184</text>
+
+  <!-- Card 4: Meta score -->
+  <rect x="780" y="126" width="170" height="38" rx="8" fill="#1E1E32"/>
+  <text x="794" y="141" fill="#888" font-size="8">META SCORE</text>
+  <text x="794" y="157" fill="#F5A623" font-size="18" font-weight="800">72</text>
+  <text x="940" y="141" fill="#888" font-size="8" text-anchor="end">deck rating</text>
+
+  <!-- Card 5: coaching sessions -->
+  <rect x="960" y="126" width="170" height="38" rx="8" fill="#1E1E32"/>
+  <text x="974" y="141" fill="#888" font-size="8">COACHING SESSIONS</text>
+  <text x="974" y="157" fill="#FFFFFF" font-size="18" font-weight="800">12</text>
+  <text x="1120" y="141" fill="#888" font-size="8" text-anchor="end">this week</text>
+
+  <!-- ============ TWO COLUMN LAYOUT ============ -->
+
+  <!-- LEFT COLUMN: Chart + Battles -->
+  <!-- Win rate chart -->
+  <rect x="220" y="178" width="560" height="200" rx="10" fill="#111119"/>
+  <rect x="220" y="178" width="560" height="200" rx="10" fill="transparent" stroke="#252538" stroke-width="1"/>
+  <text x="240" y="200" fill="#888" font-size="10" font-weight="600" letter-spacing="1">WIN RATE TREND — 30 DAYS</text>
+
+  <!-- Chart axes -->
+  <line x1="260" y1="210" x2="260" y2="355" stroke="#252538" stroke-width="1"/>
+  <line x1="260" y1="355" x2="760" y2="355" stroke="#252538" stroke-width="1"/>
+
+  <!-- Grid lines -->
+  <line x1="260" y1="250" x2="760" y2="250" stroke="#1C1C2E" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="260" y1="290" x2="760" y2="290" stroke="#1C1C2E" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="260" y1="330" x2="760" y2="330" stroke="#1C1C2E" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- Y labels -->
+  <text x="255" y="253" fill="#555" font-size="8" text-anchor="end">70%</text>
+  <text x="255" y="293" fill="#555" font-size="8" text-anchor="end">60%</text>
+  <text x="255" y="333" fill="#555" font-size="8" text-anchor="end">50%</text>
+
+  <!-- Win rate line (green, trending up) -->
+  <polyline points="270,340 290,335 310,338 330,325 350,320 370,315 390,318 410,310 430,305 450,308 470,300 490,295 510,298 530,288 550,285 570,280 590,278 610,274 630,270 650,268 670,265 690,260 710,255 730,250 750,248" fill="none" stroke="#4CAF50" stroke-width="2.5"/>
+  <!-- Fill area under line -->
+  <polygon points="270,340 290,335 310,338 330,325 350,320 370,315 390,318 410,310 430,305 450,308 470,300 490,295 510,298 530,288 550,285 570,280 590,278 610,274 630,270 650,268 670,265 690,260 710,255 730,250 750,248 750,355 270,355" fill="#4CAF5015"/>
+
+  <!-- Meta avg line (dashed blue) -->
+  <polyline points="270,320 290,322 310,318 330,320 350,316 370,318 390,315 410,312 430,314 450,310 470,312 490,308 510,310 530,306 550,308 570,304 590,305 610,302 630,300 650,302 670,298 690,296 710,294 730,295 750,292" fill="none" stroke="#2196F3" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.7"/>
+
+  <!-- Annotation marker -->
+  <circle cx="630" cy="270" r="5" fill="#F5A623"/>
+  <line x1="630" y1="265" x2="630" y2="230" stroke="#F5A623" stroke-width="1" stroke-dasharray="3,2"/>
+  <rect x="590" y="215" width="100" height="20" rx="4" fill="#1E1E32"/>
+  <text x="640" y="228" text-anchor="middle" fill="#F5A623" font-size="7">Meta patch day</text>
+
+  <!-- Legend -->
+  <line x1="270" y1="375" x2="290" y2="375" stroke="#4CAF50" stroke-width="2"/>
+  <text x="295" y="378" fill="#888" font-size="8">Your win rate</text>
+  <line x1="360" y1="375" x2="380" y2="375" stroke="#2196F3" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="385" y="378" fill="#888" font-size="8">Meta average</text>
+
+  <!-- Battles list -->
+  <rect x="220" y="386" width="560" height="30" rx="0" fill="#0F0F1A"/>
+  <text x="240" y="405" fill="#888" font-size="10" font-weight="600" letter-spacing="1">RECENT BATTLES</text>
+  <text x="772" y="405" fill="#F5A623" font-size="9" text-anchor="end">View all →</text>
+
+  <!-- Battle row 1 (victory) -->
+  <rect x="220" y="416" width="560" height="50" fill="#111119"/>
+  <rect x="220" y="416" width="4" height="50" fill="#4CAF50"/>
+  <text x="240" y="436" fill="#4CAF50" font-size="9" font-weight="700">VICTORY</text>
+  <text x="240" y="450" fill="#666" font-size="8">2 min ago · +30 trophies</text>
+  <text x="340" y="436" fill="#FFFFFF" font-size="9" font-weight="600">Hog 2.6</text>
+  <text x="340" y="450" fill="#888" font-size="8">vs Golem Night Witch</text>
+  <text x="440" y="436" fill="#888" font-size="8">3:14</text>
+  <text x="440" y="450" fill="#888" font-size="8">2 towers</text>
+  <rect x="620" y="424" width="100" height="22" rx="8" fill="#F5A62315" stroke="#F5A623" stroke-width="0.5"/>
+  <text x="670" y="439" text-anchor="middle" fill="#F5A623" font-size="8">🤖 AI Analyze</text>
+  <text x="750" y="436" fill="#4CAF50" font-size="9" font-weight="700" text-anchor="end">72/100</text>
+  <text x="750" y="450" fill="#888" font-size="8" text-anchor="end">performance</text>
+
+  <!-- Battle row 2 (loss) -->
+  <rect x="220" y="466" width="560" height="50" fill="#0F0F1A"/>
+  <rect x="220" y="466" width="4" height="50" fill="#F44336"/>
+  <text x="240" y="486" fill="#F44336" font-size="9" font-weight="700">DEFEAT</text>
+  <text x="240" y="500" fill="#666" font-size="8">18 min ago · -18 trophies</text>
+  <text x="340" y="486" fill="#FFFFFF" font-size="9" font-weight="600">Hog 2.6</text>
+  <text x="340" y="500" fill="#888" font-size="8">vs Lava Hound</text>
+  <text x="440" y="486" fill="#888" font-size="8">2:58</text>
+  <text x="440" y="500" fill="#888" font-size="8">1 tower</text>
+  <rect x="620" y="474" width="100" height="22" rx="8" fill="#F5A62315" stroke="#F5A623" stroke-width="0.5"/>
+  <text x="670" y="489" text-anchor="middle" fill="#F5A623" font-size="8">🤖 AI Analyze</text>
+  <text x="750" y="486" fill="#F44336" font-size="9" font-weight="700" text-anchor="end">44/100</text>
+  <text x="750" y="500" fill="#888" font-size="8" text-anchor="end">performance</text>
+
+  <!-- Battle row 3 (victory) -->
+  <rect x="220" y="516" width="560" height="50" fill="#111119"/>
+  <rect x="220" y="516" width="4" height="50" fill="#4CAF50"/>
+  <text x="240" y="536" fill="#4CAF50" font-size="9" font-weight="700">VICTORY</text>
+  <text x="240" y="550" fill="#666" font-size="8">35 min ago · +28 trophies</text>
+  <text x="340" y="536" fill="#FFFFFF" font-size="9" font-weight="600">Hog 2.6</text>
+  <text x="340" y="550" fill="#888" font-size="8">vs Miner Wall Breakers</text>
+  <text x="440" y="536" fill="#888" font-size="8">2:45</text>
+  <text x="440" y="550" fill="#888" font-size="8">3 towers</text>
+  <rect x="620" y="524" width="100" height="22" rx="8" fill="#F5A62315" stroke="#F5A623" stroke-width="0.5"/>
+  <text x="670" y="539" text-anchor="middle" fill="#F5A623" font-size="8">🤖 AI Analyze</text>
+  <text x="750" y="536" fill="#4CAF50" font-size="9" font-weight="700" text-anchor="end">88/100</text>
+  <text x="750" y="550" fill="#888" font-size="8" text-anchor="end">performance</text>
+
+  <!-- ============ RIGHT COLUMN: Coach + Trends ============ -->
+
+  <!-- AI Coach panel -->
+  <rect x="790" y="178" width="590" height="310" rx="10" fill="#111119" stroke="#252538" stroke-width="1"/>
+  <text x="810" y="200" fill="#888" font-size="10" font-weight="600" letter-spacing="1">AI COACH</text>
+  <circle cx="1350" cy="194" r="10" fill="#4CAF5020"/>
+  <text x="1350" y="198" text-anchor="middle" fill="#4CAF50" font-size="8">●</text>
+
+  <!-- Coach messages -->
+  <!-- User -->
+  <rect x="1070" y="210" width="290" height="44" rx="10" fill="#F5A623"/>
+  <text x="1080" y="227" fill="#0A0A0F" font-size="9" font-weight="600">Why do I keep losing to Lava Hound?</text>
+  <text x="1080" y="241" fill="#0A0A0F" font-size="9" font-weight="600">I can't figure out the right counter timing.</text>
+  <text x="1356" y="256" fill="#555" font-size="7" text-anchor="end">2:14 PM</text>
+
+  <!-- AI Response -->
+  <rect x="808" y="262" width="380" height="110" rx="10" fill="#1E1E32"/>
+  <rect x="808" y="262" width="3" height="110" rx="1.5" fill="#F5A623"/>
+  <text x="820" y="280" fill="#F5A623" font-size="9" font-weight="700">🤖 ClashCoach · claude-sonnet-4-6</text>
+  <text x="820" y="296" fill="#CCCCCC" font-size="8.5">Great question. Lava Hound is a nightmare for Hog 2.6 if you don't</text>
+  <text x="820" y="308" fill="#CCCCCC" font-size="8.5">respect the balloon drop. Here's what I see in your last 3 losses:</text>
+  <text x="820" y="322" fill="#FFFFFF" font-size="8.5" font-weight="600">1. You're playing Hog before their Lava Hound crosses the bridge.</text>
+  <text x="820" y="334" fill="#FFFFFF" font-size="8.5" font-weight="600">2. Your Musketeer is being used defensively too early.</text>
+  <text x="820" y="346" fill="#CCCCCC" font-size="8.5">Fix: Hold your Fireball for the Balloon, not the Hound itself. The</text>
+  <text x="820" y="358" fill="#CCCCCC" font-size="8.5">Hound does minimal tower damage — the Balloon is the killer.</text>
+  <text x="808" y="376" fill="#555" font-size="7">2:14 PM · 847 tokens</text>
+
+  <!-- Streaming indicator -->
+  <rect x="808" y="382" width="180" height="28" rx="8" fill="#161626"/>
+  <text x="820" y="394" fill="#888" font-size="8" font-style="italic">Analyzing your battle replays...</text>
+  <text x="820" y="405" fill="#888" font-size="8" font-style="italic">Here's the exact timestamp to watch</text>
+  <circle cx="992" cy="394" r="3.5" fill="#F5A623" opacity="0.3"/>
+  <circle cx="1000" cy="394" r="3.5" fill="#F5A623" opacity="0.6"/>
+  <circle cx="1008" cy="394" r="3.5" fill="#F5A623"/>
+
+  <!-- Quick chips -->
+  <rect x="808" y="418" width="90" height="22" rx="11" fill="#1E1E32" stroke="#F5A623" stroke-width="0.5"/>
+  <text x="853" y="432" text-anchor="middle" fill="#F5A623" font-size="8">Best counters?</text>
+  <rect x="904" y="418" width="80" height="22" rx="11" fill="#1E1E32" stroke="#F5A623" stroke-width="0.5"/>
+  <text x="944" y="432" text-anchor="middle" fill="#F5A623" font-size="8">Fix my deck</text>
+  <rect x="990" y="418" width="96" height="22" rx="11" fill="#1E1E32" stroke="#F5A623" stroke-width="0.5"/>
+  <text x="1038" y="432" text-anchor="middle" fill="#F5A623" font-size="8">Show battle replay</text>
+  <rect x="1092" y="418" width="80" height="22" rx="11" fill="#1E1E32" stroke="#F5A623" stroke-width="0.5"/>
+  <text x="1132" y="432" text-anchor="middle" fill="#F5A623" font-size="8">Today's meta</text>
+
+  <!-- Input bar -->
+  <rect x="808" y="450" width="570" height="36" rx="10" fill="#1A1A2E" stroke="#333350" stroke-width="1"/>
+  <text x="824" y="472" fill="#444" font-size="9">Ask your AI coach anything about Clash Royale...</text>
+  <rect x="1336" y="456" width="28" height="24" rx="6" fill="#F5A623"/>
+  <text x="1350" y="472" text-anchor="middle" fill="#0A0A0F" font-size="13" font-weight="700">↑</text>
+
+  <!-- ============ TREND MINI + WEEKLY REPORT ============ -->
+  <rect x="790" y="496" width="590" height="390" rx="10" fill="#111119" stroke="#252538" stroke-width="1"/>
+  <text x="810" y="518" fill="#888" font-size="10" font-weight="600" letter-spacing="1">META SNAPSHOT — SEASON 62</text>
+  <rect x="1290" y="506" width="80" height="20" rx="10" fill="#F5A62315"/>
+  <text x="1330" y="520" text-anchor="middle" fill="#F5A623" font-size="8">Full Trends →</text>
+
+  <!-- Archetype table -->
+  <!-- Header -->
+  <rect x="808" y="526" width="562" height="22" rx="4" fill="#1A1A2E"/>
+  <text x="820" y="540" fill="#666" font-size="8" font-weight="600">ARCHETYPE</text>
+  <text x="970" y="540" fill="#666" font-size="8" font-weight="600">USAGE %</text>
+  <text x="1060" y="540" fill="#666" font-size="8" font-weight="600">WIN RATE</text>
+  <text x="1150" y="540" fill="#666" font-size="8" font-weight="600">TREND</text>
+  <text x="1240" y="540" fill="#666" font-size="8" font-weight="600">VS YOUR DECK</text>
+
+  <!-- Row 1 -->
+  <rect x="808" y="548" width="562" height="30" fill="#111119"/>
+  <rect x="808" y="548" width="4" height="30" fill="#F5A623"/>
+  <text x="820" y="560" fill="#FFFFFF" font-size="9" font-weight="600">Hog 2.6 Cycle</text>
+  <text x="820" y="572" fill="#888" font-size="7">Hog · Skeletons · Cannon · Fireball · Arrows</text>
+  <text x="970" y="566" fill="#CCCCCC" font-size="9">18.4%</text>
+  <text x="1060" y="566" fill="#4CAF50" font-size="9" font-weight="700">61.2%</text>
+  <text x="1150" y="566" fill="#4CAF50" font-size="9">↑ +2.1%</text>
+  <text x="1240" y="560" fill="#888" font-size="8">YOUR DECK</text>
+  <text x="1240" y="572" fill="#F5A623" font-size="7">—</text>
+
+  <!-- Row 2 -->
+  <rect x="808" y="578" width="562" height="30" fill="#0F0F1A"/>
+  <rect x="808" y="578" width="4" height="30" fill="#9C27B0"/>
+  <text x="820" y="590" fill="#FFFFFF" font-size="9" font-weight="600">Golem Night Witch</text>
+  <text x="820" y="602" fill="#888" font-size="7">Golem · Night Witch · Baby Dragon · Tornado</text>
+  <text x="970" y="596" fill="#CCCCCC" font-size="9">12.1%</text>
+  <text x="1060" y="596" fill="#F44336" font-size="9" font-weight="700">54.8%</text>
+  <text x="1150" y="596" fill="#F44336" font-size="9">↓ -1.3%</text>
+  <text x="1240" y="590" fill="#4CAF50" font-size="8">FAVORABLE</text>
+  <text x="1240" y="602" fill="#4CAF50" font-size="7">+6.4% edge</text>
+
+  <!-- Row 3 -->
+  <rect x="808" y="608" width="562" height="30" fill="#111119"/>
+  <rect x="808" y="608" width="4" height="30" fill="#2196F3"/>
+  <text x="820" y="620" fill="#FFFFFF" font-size="9" font-weight="600">Miner Wall Breakers</text>
+  <text x="820" y="632" fill="#888" font-size="7">Miner · Wall Breakers · Goblin Barrel · Mega Knight</text>
+  <text x="970" y="626" fill="#CCCCCC" font-size="9">9.8%</text>
+  <text x="1060" y="626" fill="#4CAF50" font-size="9" font-weight="700">58.6%</text>
+  <text x="1150" y="626" fill="#888" font-size="9">→ stable</text>
+  <text x="1240" y="620" fill="#888" font-size="8">NEUTRAL</text>
+  <text x="1240" y="632" fill="#888" font-size="7">+1.2% edge</text>
+
+  <!-- Row 4 -->
+  <rect x="808" y="638" width="562" height="30" fill="#0F0F1A"/>
+  <rect x="808" y="638" width="4" height="30" fill="#FF5722"/>
+  <text x="820" y="650" fill="#FFFFFF" font-size="9" font-weight="600">Lava Hound LumberLoon</text>
+  <text x="820" y="662" fill="#888" font-size="7">Lava Hound · Balloon · Lumberjack · Mega Minion</text>
+  <text x="970" y="656" fill="#CCCCCC" font-size="9">8.3%</text>
+  <text x="1060" y="656" fill="#4CAF50" font-size="9" font-weight="700">59.1%</text>
+  <text x="1150" y="656" fill="#4CAF50" font-size="9">↑ +3.8%</text>
+  <text x="1240" y="650" fill="#F44336" font-size="8">⚠ UNFAVORABLE</text>
+  <text x="1240" y="662" fill="#F44336" font-size="7">-4.9% edge</text>
+
+  <!-- AI Weekly Report panel -->
+  <rect x="808" y="676" width="562" height="110" rx="10" fill="#1A1A2E" stroke="#F5A623" stroke-width="0.5"/>
+  <text x="820" y="694" fill="#F5A623" font-size="10" font-weight="700">🤖 AI Weekly Coaching Report — Week of Mar 2</text>
+  <text x="820" y="710" fill="#CCCCCC" font-size="8.5">Your win rate jumped +3.1% this week — excellent improvement. The main driver was better Cannon</text>
+  <text x="820" y="722" fill="#CCCCCC" font-size="8.5">placement on defense. However, Lava Hound is your biggest weakness (3 of 5 losses this week).</text>
+  <text x="820" y="736" fill="#FFFFFF" font-size="8.5" font-weight="600">Priority goals for next week:</text>
+  <text x="820" y="748" fill="#CCCCCC" font-size="8.5">① Hold Fireball for Balloon, not Lava Hound   ② Practice Musketeer kiting on defense</text>
+  <text x="820" y="760" fill="#CCCCCC" font-size="8.5">③ Consider swapping Balloon for Goblin Barrel to improve Lava matchup cycle speed</text>
+  <text x="820" y="775" fill="#555" font-size="7">Generated by claude-opus-4-6 · Sun Mar 8 00:00 UTC · Elite plan</text>
+  <rect x="1248" y="690" width="110" height="22" rx="11" fill="#F5A623"/>
+  <text x="1303" y="705" text-anchor="middle" fill="#0A0A0F" font-size="8" font-weight="700">Download PDF →</text>
+
+  <!-- Bottom bar -->
+  <rect x="20" y="855" width="1360" height="30" rx="0" fill="#111119"/>
+  <rect x="20" y="855" width="1360" height="30" rx="0" fill="transparent" stroke="#252538" stroke-width="0"/>
+  <text x="240" y="874" fill="#555" font-size="8">ClashCoach AI v1.0.0 · claude-sonnet-4-6 · Season 62 · GDPR Compliant</text>
+  <text x="1360" y="874" fill="#555" font-size="8" text-anchor="end">Pro Plan · API: ● Healthy · Latency: 420ms</text>
+
+</svg>

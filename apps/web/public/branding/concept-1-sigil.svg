@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Concept 1: Sigil
+  A royal cipher that fuses a five-point crown with an embedded check mark.
+  The check mark sits in the negative space of the crown's middle band,
+  reading as "approved by the coach" / "corrected line of play".
+  Geometry is drawn on a 64x64 grid, all paths are integer-aligned for
+  crisp 16px rendering. Background plate is a rounded square so the mark
+  has a contained silhouette suitable for app/home-screen icons.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="CoachRoyale sigil mark">
+  <title>CoachRoyale</title>
+  <!-- Plate -->
+  <rect x="2" y="2" width="60" height="60" rx="14" ry="14" fill="#0a0a23"/>
+  <!-- Inner bevel ring for depth (subtle, single tone) -->
+  <rect x="4.5" y="4.5" width="55" height="55" rx="11.5" ry="11.5"
+        fill="none" stroke="#1a1a3a" stroke-width="1"/>
+
+  <!-- Crown body: a single closed path. Three peaks with rounded jewels.
+       Peaks at x=14, x=32, x=50; valleys at x=23 and x=41.
+       Base sits at y=44; peaks at y=18. -->
+  <path d="M14 44
+           L10 22
+           L23 30
+           L32 14
+           L41 30
+           L54 22
+           L50 44
+           Z"
+        fill="#f0c544"
+        stroke="#0a0a23"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+
+  <!-- Three crown jewels (peaks) -->
+  <circle cx="14" cy="22" r="2.5" fill="#0a0a23"/>
+  <circle cx="32" cy="14" r="2.8" fill="#0a0a23"/>
+  <circle cx="50" cy="22" r="2.5" fill="#0a0a23"/>
+
+  <!-- Crown base band: a darker stripe to anchor the form -->
+  <rect x="12" y="44" width="40" height="6" rx="1.5" fill="#d4a017"/>
+
+  <!-- Coaching check mark, set INSIDE the crown body as negative space.
+       Stroked in the dark plate color so it punches through.
+       Starts low-left, dips to anchor, kicks up to the right peak.
+       Line work matches crown weight for unity. -->
+  <path d="M19 36 L27 42 L44 24"
+        fill="none"
+        stroke="#0a0a23"
+        stroke-width="3.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+  <!-- Decorative gem at base center (royal cipher feel) -->
+  <circle cx="32" cy="47" r="1.6" fill="#6b46c1"/>
+</svg>

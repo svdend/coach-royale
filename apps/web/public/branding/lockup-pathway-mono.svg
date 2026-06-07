@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Lockup, monochrome. Inherits currentColor for placement on any
+  surface (dark navy header, white print, single-tone gold).
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 64" role="img" aria-label="CoachRoyale">
+  <title>CoachRoyale</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 50 L18 30 L24 38 L32 18 L40 28 L46 12 L54 50" stroke-width="4.5"/>
+    <line x1="14" y1="54" x2="50" y2="54" stroke-width="2.5"/>
+    <circle cx="18" cy="30" r="2.5" fill="currentColor" stroke="none"/>
+    <circle cx="32" cy="18" r="3" fill="currentColor" stroke="none"/>
+    <circle cx="46" cy="12" r="2.5" fill="currentColor" stroke="none"/>
+  </g>
+  <g font-family="Georgia, 'Times New Roman', serif"
+     font-weight="600"
+     font-size="28"
+     dominant-baseline="middle"
+     fill="currentColor"
+     text-rendering="optimizeLegibility">
+    <text x="76" y="34" letter-spacing="0.5">CoachRoyale</text>
+  </g>
+  <line x1="76" y1="46" x2="100" y2="46" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="106" y="49"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="10"
+        font-style="italic"
+        fill="currentColor"
+        opacity="0.7"
+        letter-spacing="1">
+    Coaching for the Ladder
+  </text>
+</svg>

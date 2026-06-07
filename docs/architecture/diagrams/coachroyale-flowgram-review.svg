@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">CoachRoyale review-ready flowgram</title>
+  <desc id="desc">Primary runtime path with availability-critical dependencies and major external services.</desc>
+  <defs>
+    <style>
+      .bg { fill: #07111f; }
+      .title { fill: #f8fafc; font: 700 34px Inter, ui-sans-serif, system-ui, sans-serif; }
+      .subtitle { fill: #94a3b8; font: 500 16px Inter, ui-sans-serif, system-ui, sans-serif; }
+      .lane { fill: rgba(15, 23, 42, .72); stroke: rgba(148, 163, 184, .24); stroke-width: 1.5; }
+      .lane-title { fill: #cbd5e1; font: 700 14px Inter, ui-sans-serif, system-ui, sans-serif; letter-spacing: .08em; }
+      .node-title { fill: #f8fafc; font: 700 17px Inter, ui-sans-serif, system-ui, sans-serif; }
+      .node-sub { fill: #cbd5e1; font: 500 13px Inter, ui-sans-serif, system-ui, sans-serif; }
+      .label { fill: #f8fafc; font: 700 13px Inter, ui-sans-serif, system-ui, sans-serif; }
+      .small { fill: #94a3b8; font: 600 12px Inter, ui-sans-serif, system-ui, sans-serif; }
+      .number { fill: #07111f; font: 800 13px Inter, ui-sans-serif, system-ui, sans-serif; }
+      .node { stroke-width: 2.25; rx: 16; }
+      .label-bg { fill: #07111f; opacity: .86; }
+      .browser { fill: #10233d; stroke: #38bdf8; }
+      .cf { fill: #3a1c0b; stroke: #f97316; }
+      .worker { fill: #26160e; stroke: #fb923c; }
+      .data { fill: #062d1a; stroke: #22c55e; }
+      .ai { fill: #26134f; stroke: #a78bfa; }
+      .billing { fill: #38260a; stroke: #facc15; }
+      .relay { fill: #3a1024; stroke: #f472b6; }
+      .muted { opacity: .46; }
+      .icon { opacity: .94; }
+      .edge { fill: none; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+      .edge-hot { fill: none; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+      .api { stroke: #f97316; }
+      .static { stroke: #38bdf8; }
+      .data-edge { stroke: #22c55e; }
+      .ai-edge { stroke: #a78bfa; }
+      .bill-edge { stroke: #facc15; }
+      .relay-edge { stroke: #f472b6; }
+      .optional { stroke: #818cf8; stroke-dasharray: 10 8; }
+      .telemetry { stroke: #94a3b8; stroke-dasharray: 6 7; }
+    </style>
+    <marker id="arrow-api" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="10" refX="11" refY="5" orient="auto"><path d="M0,0 L13,5 L0,10 Z" fill="#f97316"/></marker>
+    <marker id="arrow-static" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="10" refX="11" refY="5" orient="auto"><path d="M0,0 L13,5 L0,10 Z" fill="#38bdf8"/></marker>
+    <marker id="arrow-data" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="10" refX="11" refY="5" orient="auto"><path d="M0,0 L13,5 L0,10 Z" fill="#22c55e"/></marker>
+    <marker id="arrow-ai" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="10" refX="11" refY="5" orient="auto"><path d="M0,0 L13,5 L0,10 Z" fill="#a78bfa"/></marker>
+    <marker id="arrow-bill" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="10" refX="11" refY="5" orient="auto"><path d="M0,0 L13,5 L0,10 Z" fill="#facc15"/></marker>
+    <marker id="arrow-relay" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="10" refX="11" refY="5" orient="auto"><path d="M0,0 L13,5 L0,10 Z" fill="#f472b6"/></marker>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="130%"><feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000000" flood-opacity=".32"/></filter>
+  </defs>
+
+  <rect class="bg" width="1600" height="900"/>
+  <g opacity=".055" stroke="#f8fafc" stroke-width="1">
+    <path d="M0 150H1600M0 250H1600M0 350H1600M0 450H1600M0 550H1600M0 650H1600M0 750H1600M0 850H1600"/>
+    <path d="M100 0V900M200 0V900M300 0V900M400 0V900M500 0V900M600 0V900M700 0V900M800 0V900M900 0V900M1000 0V900M1100 0V900M1200 0V900M1300 0V900M1400 0V900M1500 0V900"/>
+  </g>
+  <text class="title" x="64" y="62">CoachRoyale review flowgram</text>
+  <text class="subtitle" x="64" y="92">Primary runtime path with availability-critical dependencies and secret boundaries called out.</text>
+
+  <g filter="url(#shadow)">
+    <rect class="lane" x="64" y="126" width="236" height="608" rx="18"/>
+    <text class="lane-title" x="88" y="162">CLIENT</text>
+    <rect class="node browser" x="94" y="222" width="176" height="86" rx="16"/>
+    <image class="icon" href="react.svg" x="112" y="249" width="34" height="34"/>
+    <text class="node-title" x="190" y="256" text-anchor="middle">React SPA</text>
+    <text class="node-sub" x="190" y="278" text-anchor="middle">search, analysis, coach</text>
+    <rect class="node browser" x="94" y="408" width="176" height="84" rx="16"/>
+    <image class="icon" href="supabase.svg" x="114" y="433" width="30" height="30"/>
+    <text class="node-title" x="196" y="442" text-anchor="middle">Supabase JS</text>
+    <text class="node-sub" x="196" y="464" text-anchor="middle">OAuth session</text>
+    <rect class="node browser muted" x="94" y="594" width="176" height="76" rx="16"/>
+    <text class="node-title" x="182" y="626" text-anchor="middle">BYOK config</text>
+    <text class="node-sub" x="182" y="648" text-anchor="middle">browser local storage</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect class="lane" x="370" y="126" width="286" height="608" rx="18"/>
+    <text class="lane-title" x="394" y="162">CLOUDFLARE RUNTIME</text>
+    <rect class="node cf" x="414" y="192" width="198" height="78" rx="16"/>
+    <image class="icon" href="cloudflare.svg" x="437" y="215" width="34" height="34"/>
+    <text class="node-title" x="530" y="226" text-anchor="middle">Pages</text>
+    <text class="node-sub" x="530" y="248" text-anchor="middle">static assets</text>
+    <rect class="node worker" x="398" y="342" width="230" height="110" rx="16"/>
+    <image class="icon" href="cloudflare.svg" x="422" y="380" width="36" height="36"/>
+    <text class="node-title" x="536" y="382" text-anchor="middle">Worker BFF</text>
+    <text class="node-sub" x="536" y="405" text-anchor="middle">Hono routes, auth, CORS</text>
+    <text class="node-sub" x="536" y="424" text-anchor="middle">AI routing + orchestration</text>
+    <rect class="node cf muted" x="414" y="560" width="198" height="78" rx="16"/>
+    <image class="icon" href="cloudflare.svg" x="437" y="583" width="34" height="34"/>
+    <text class="node-title" x="532" y="594" text-anchor="middle">Workers AI</text>
+    <text class="node-sub" x="532" y="616" text-anchor="middle">free lane fallback</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect class="lane" x="742" y="126" width="274" height="608" rx="18"/>
+    <text class="lane-title" x="766" y="162">SUPABASE</text>
+    <rect class="node data" x="788" y="218" width="182" height="84" rx="16"/>
+    <image class="icon" href="supabase.svg" x="810" y="244" width="30" height="30"/>
+    <text class="node-title" x="890" y="252" text-anchor="middle">Auth</text>
+    <text class="node-sub" x="890" y="274" text-anchor="middle">JWT + OAuth broker</text>
+    <path class="node data" d="M790 428 C790 398 968 398 968 428 L968 566 C968 596 790 596 790 566 Z"/>
+    <path d="M790 428 C790 458 968 458 968 428" fill="none" stroke="#22c55e" stroke-width="2.25"/>
+    <image class="icon" href="postgresql.svg" x="812" y="473" width="34" height="34"/>
+    <text class="node-title" x="900" y="486" text-anchor="middle">Postgres</text>
+    <text class="node-sub" x="900" y="508" text-anchor="middle">profiles, tracked players</text>
+    <text class="node-sub" x="900" y="526" text-anchor="middle">battles, analysis, threads</text>
+    <text class="node-sub" x="900" y="544" text-anchor="middle">privacy + usage counters</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect class="lane" x="1100" y="126" width="434" height="608" rx="18"/>
+    <text class="lane-title" x="1124" y="162">EXTERNAL DEPENDENCIES</text>
+    <rect class="node ai" x="1132" y="208" width="178" height="82" rx="16"/>
+    <image class="icon" href="anthropic.svg" x="1156" y="235" width="28" height="28"/>
+    <text class="node-title" x="1238" y="242" text-anchor="middle">Anthropic</text>
+    <text class="node-sub" x="1238" y="264" text-anchor="middle">Pro + coach paths</text>
+    <rect class="node billing" x="1132" y="380" width="178" height="82" rx="16"/>
+    <image class="icon" href="lemonsqueezy.svg" x="1156" y="407" width="28" height="28"/>
+    <text class="node-title" x="1242" y="414" text-anchor="middle">Lemon Squeezy</text>
+    <text class="node-sub" x="1242" y="436" text-anchor="middle">checkout + webhooks</text>
+    <rect class="node relay" x="1132" y="552" width="178" height="82" rx="16"/>
+    <image class="icon" href="fastapi.svg" x="1156" y="579" width="28" height="28"/>
+    <text class="node-title" x="1242" y="586" text-anchor="middle">FastAPI relay</text>
+    <text class="node-sub" x="1242" y="608" text-anchor="middle">static-IP egress</text>
+    <rect class="node relay" x="1340" y="552" width="162" height="82" rx="16"/>
+    <image class="icon" href="supercell.svg" x="1363" y="579" width="28" height="28"/>
+    <text class="node-title" x="1448" y="586" text-anchor="middle">Supercell API</text>
+    <text class="node-sub" x="1448" y="608" text-anchor="middle">game data</text>
+    <rect class="node ai muted" x="1340" y="208" width="162" height="82" rx="16"/>
+    <text class="node-title" x="1421" y="242" text-anchor="middle">Custom / BYOK</text>
+    <text class="node-sub" x="1421" y="264" text-anchor="middle">optional model lanes</text>
+  </g>
+
+  <circle cx="330" cy="356" r="15" fill="#f97316"/><text class="number" x="330" y="361" text-anchor="middle">1</text>
+  <path class="edge-hot api" marker-end="url(#arrow-api)" d="M270 265 H360 C384 265 388 396 398 396"/>
+  <rect x="306" y="327" width="116" height="34" rx="8" fill="#31290f"/><text class="label" x="364" y="349" text-anchor="middle">/api/* + JWT</text>
+  <circle cx="342" cy="216" r="15" fill="#38bdf8"/><text class="number" x="342" y="221" text-anchor="middle">2</text>
+  <path class="edge static" marker-end="url(#arrow-static)" d="M270 238 H414"/><text class="label" x="342" y="204" text-anchor="middle">static assets</text>
+  <circle cx="688" cy="258" r="15" fill="#22c55e"/><text class="number" x="688" y="263" text-anchor="middle">3</text>
+  <path class="edge data-edge" marker-end="url(#arrow-data)" d="M628 378 H690 C718 378 744 260 788 260"/>
+  <rect class="label-bg" x="650" y="326" width="86" height="25" rx="7"/><text class="label" x="693" y="344" text-anchor="middle">verify JWT</text>
+  <circle cx="704" cy="498" r="15" fill="#22c55e"/><text class="number" x="704" y="503" text-anchor="middle">4</text>
+  <path class="edge data-edge" marker-end="url(#arrow-data)" d="M628 410 H688 C724 410 740 496 790 496"/>
+  <rect class="label-bg" x="618" y="452" width="154" height="25" rx="7"/><text class="label" x="695" y="470" text-anchor="middle">service-role data</text>
+  <circle cx="1048" cy="250" r="15" fill="#a78bfa"/><text class="number" x="1048" y="255" text-anchor="middle">5</text>
+  <path class="edge ai-edge" marker-end="url(#arrow-ai)" d="M628 386 C792 330 944 250 1132 250"/>
+  <rect class="label-bg" x="852" y="309" width="118" height="25" rx="7"/><text class="label" x="911" y="327" text-anchor="middle">Pro AI + coach</text>
+  <circle cx="1048" cy="594" r="15" fill="#f472b6"/><text class="number" x="1048" y="599" text-anchor="middle">6</text>
+  <path class="edge relay-edge" marker-end="url(#arrow-relay)" d="M628 420 C804 538 956 592 1132 592"/>
+  <rect class="label-bg" x="872" y="560" width="146" height="25" rx="7"/><text class="label" x="945" y="578" text-anchor="middle">relay shared secret</text>
+  <path class="edge relay-edge" marker-end="url(#arrow-relay)" d="M1310 592 H1340"/>
+  <rect class="label-bg" x="1294" y="548" width="118" height="25" rx="7"/><text class="label" x="1353" y="566" text-anchor="middle">Supercell token</text>
+  <path class="edge data-edge" marker-end="url(#arrow-data)" d="M270 450 H788"/>
+  <rect class="label-bg" x="356" y="426" width="244" height="25" rx="7"/><text class="label" x="478" y="444" text-anchor="middle">OAuth session + profile read</text>
+  <path class="edge ai-edge muted" marker-end="url(#arrow-ai)" d="M628 598 H742 C820 598 838 626 968 626 C1130 626 1200 300 1340 250"/>
+  <rect class="label-bg" x="858" y="622" width="314" height="25" rx="7"/><text class="label" x="1015" y="640" text-anchor="middle">Workers AI / custom / BYOK are secondary lanes</text>
+  <path class="edge bill-edge" marker-end="url(#arrow-bill)" d="M628 430 C790 430 950 420 1132 420"/>
+  <rect class="label-bg" x="802" y="387" width="178" height="25" rx="7"/><text class="label" x="891" y="405" text-anchor="middle">checkout + webhook</text>
+  <path class="edge telemetry muted" d="M628 450 C720 684 520 700 418 638"/>
+  <rect class="label-bg" x="480" y="656" width="156" height="25" rx="7"/><text class="label" x="558" y="674" text-anchor="middle">best-effort AI_EVENTS</text>
+
+  <g transform="translate(64 796)">
+    <rect x="0" y="0" width="1470" height="64" rx="16" fill="rgba(15, 23, 42, .84)" stroke="rgba(148, 163, 184, .25)"/>
+    <text class="small" x="24" y="36">Numbers = primary path. Muted lines = secondary or optional.</text>
+    <path class="edge-hot api" d="M482 32H538"/><text class="small" x="552" y="36">Primary API</text>
+    <path class="edge data-edge" d="M664 32H720"/><text class="small" x="734" y="36">Auth/data</text>
+    <path class="edge ai-edge" d="M848 32H904"/><text class="small" x="918" y="36">AI provider</text>
+    <path class="edge relay-edge" d="M1034 32H1090"/><text class="small" x="1104" y="36">Static-IP relay</text>
+    <path class="edge optional" d="M1252 32H1308"/><text class="small" x="1322" y="36">Optional model lane</text>
+  </g>
+</svg>

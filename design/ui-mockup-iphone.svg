@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1400" height="900" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" font-family="SF Pro Display, -apple-system, Helvetica Neue, sans-serif">
+
+  <!-- Background -->
+  <rect width="1400" height="900" fill="#0A0A0F"/>
+
+  <!-- Title -->
+  <text x="700" y="40" text-anchor="middle" fill="#F5A623" font-size="22" font-weight="700" letter-spacing="2">ClashCoach AI — iPhone UI</text>
+
+  <!-- ============ SCREEN 1: Home Dashboard ============ -->
+  <!-- Phone frame -->
+  <rect x="30" y="60" width="240" height="520" rx="36" fill="#1C1C2E" stroke="#3A3A5C" stroke-width="2"/>
+  <rect x="40" y="70" width="220" height="500" rx="28" fill="#0F0F1A"/>
+  <!-- Notch -->
+  <rect x="110" y="70" width="80" height="18" rx="9" fill="#1C1C2E"/>
+
+  <!-- Status bar -->
+  <text x="55" y="104" fill="#FFFFFF" font-size="9" font-weight="600">9:41</text>
+  <text x="230" y="104" fill="#FFFFFF" font-size="8" text-anchor="end">●●● ▶ ▊▊</text>
+
+  <!-- Header -->
+  <rect x="40" y="112" width="220" height="50" fill="#161626"/>
+  <circle cx="62" cy="137" r="14" fill="#F5A623"/>
+  <text x="62" y="141" text-anchor="middle" fill="#0A0A0F" font-size="11" font-weight="800">ZK</text>
+  <text x="82" y="131" fill="#FFFFFF" font-size="10" font-weight="700">ZeroKing_CR</text>
+  <text x="82" y="145" fill="#888" font-size="8">7,842 trophies · Path of Legends</text>
+  <circle cx="243" cy="137" r="10" fill="#F5A62320"/>
+  <text x="243" y="141" text-anchor="middle" fill="#F5A623" font-size="12">🔔</text>
+
+  <!-- Meta Health Card -->
+  <rect x="46" y="168" width="208" height="56" rx="12" fill="#1E1E32"/>
+  <text x="56" y="184" fill="#888" font-size="8" font-weight="600" letter-spacing="1">META PULSE</text>
+  <text x="56" y="198" fill="#FFFFFF" font-size="11" font-weight="700">⚡ Mid-Ladder Shift</text>
+  <text x="56" y="210" fill="#A8D8A8" font-size="8">Hog Rider decks +4.2% win rate this week</text>
+  <rect x="190" y="178" width="56" height="38" rx="8" fill="#F5A62320"/>
+  <text x="218" y="197" text-anchor="middle" fill="#F5A623" font-size="16" font-weight="800">72</text>
+  <text x="218" y="208" text-anchor="middle" fill="#F5A623" font-size="7">META SCORE</text>
+
+  <!-- Win Rate -->
+  <rect x="46" y="230" width="98" height="48" rx="10" fill="#1E1E32"/>
+  <text x="56" y="246" fill="#888" font-size="8">WIN RATE (7D)</text>
+  <text x="56" y="262" fill="#4CAF50" font-size="18" font-weight="800">63%</text>
+  <text x="56" y="273" fill="#4CAF50" font-size="8">↑ +3.1%</text>
+
+  <rect x="152" y="230" width="102" height="48" rx="10" fill="#1E1E32"/>
+  <text x="162" y="246" fill="#888" font-size="8">BATTLES TODAY</text>
+  <text x="162" y="262" fill="#FFFFFF" font-size="18" font-weight="800">12</text>
+  <text x="162" y="273" fill="#888" font-size="8">8W / 4L</text>
+
+  <!-- Recent Battle -->
+  <text x="56" y="294" fill="#888" font-size="9" font-weight="600" letter-spacing="1">LAST BATTLE</text>
+  <rect x="46" y="300" width="208" height="56" rx="10" fill="#1E1E32"/>
+  <rect x="46" y="300" width="6" height="56" rx="3" fill="#4CAF50"/>
+  <text x="60" y="316" fill="#4CAF50" font-size="9" font-weight="700">VICTORY</text>
+  <text x="60" y="328" fill="#FFFFFF" font-size="9">Hog 2.6 vs Golem NW</text>
+  <text x="60" y="340" fill="#888" font-size="8">2 mins ago · +30 trophies</text>
+  <text x="60" y="352" fill="#F5A623" font-size="8">🤖 Tap to analyze with AI →</text>
+
+  <!-- Tab Bar -->
+  <rect x="40" y="530" width="220" height="40" fill="#161626"/>
+  <text x="72" y="554" text-anchor="middle" fill="#F5A623" font-size="14">⊞</text>
+  <text x="72" y="566" text-anchor="middle" fill="#F5A623" font-size="6">Home</text>
+  <text x="112" y="554" text-anchor="middle" fill="#666" font-size="14">⚔</text>
+  <text x="112" y="566" text-anchor="middle" fill="#666" font-size="6">Battles</text>
+  <text x="152" y="554" text-anchor="middle" fill="#666" font-size="14">💬</text>
+  <text x="152" y="566" text-anchor="middle" fill="#666" font-size="6">Coach</text>
+  <text x="192" y="554" text-anchor="middle" fill="#666" font-size="14">📈</text>
+  <text x="192" y="566" text-anchor="middle" fill="#666" font-size="6">Trends</text>
+  <text x="232" y="554" text-anchor="middle" fill="#666" font-size="14">🃏</text>
+  <text x="232" y="566" text-anchor="middle" fill="#666" font-size="6">Decks</text>
+
+  <text x="150" y="600" text-anchor="middle" fill="#666" font-size="11" font-style="italic">Home Dashboard</text>
+
+  <!-- ============ SCREEN 2: AI Coach Chat ============ -->
+  <rect x="310" y="60" width="240" height="520" rx="36" fill="#1C1C2E" stroke="#3A3A5C" stroke-width="2"/>
+  <rect x="320" y="70" width="220" height="500" rx="28" fill="#0F0F1A"/>
+  <rect x="390" y="70" width="80" height="18" rx="9" fill="#1C1C2E"/>
+
+  <!-- Chat Header -->
+  <rect x="320" y="88" width="220" height="48" fill="#161626"/>
+  <text x="360" y="108" fill="#888" font-size="8">←</text>
+  <circle cx="390" cy="112" r="14" fill="#F5A623"/>
+  <text x="390" y="117" text-anchor="middle" fill="#0A0A0F" font-size="12" font-weight="800">AI</text>
+  <text x="408" y="107" fill="#FFFFFF" font-size="10" font-weight="700">ClashCoach</text>
+  <text x="408" y="119" fill="#4CAF50" font-size="8">● Online · Sonnet 4.6</text>
+
+  <!-- Messages -->
+  <!-- User msg -->
+  <rect x="380" y="145" width="148" height="36" rx="10" fill="#F5A623"/>
+  <text x="388" y="158" fill="#0A0A0F" font-size="8" font-weight="600">Why did I lose my last</text>
+  <text x="388" y="170" fill="#0A0A0F" font-size="8" font-weight="600">battle vs Golem NW? 🤔</text>
+
+  <!-- AI Response -->
+  <rect x="328" y="190" width="168" height="80" rx="10" fill="#1E1E32"/>
+  <rect x="328" y="190" width="3" height="80" rx="1.5" fill="#F5A623"/>
+  <text x="338" y="205" fill="#F5A623" font-size="8" font-weight="700">Battle Analysis ⚡</text>
+  <text x="338" y="218" fill="#CCCCCC" font-size="7.5">Your main mistake was cycling</text>
+  <text x="338" y="229" fill="#CCCCCC" font-size="7.5">Hog too early at 2x elixir.</text>
+  <text x="338" y="242" fill="#CCCCCC" font-size="7.5">Opponent punished with Night</text>
+  <text x="338" y="253" fill="#CCCCCC" font-size="7.5">Witch + Mega Minion combo.</text>
+  <text x="338" y="264" fill="#FFAB00" font-size="7.5" font-weight="600">→ Save Hog for counter-push</text>
+
+  <!-- AI streaming -->
+  <rect x="328" y="278" width="110" height="28" rx="8" fill="#1E1E32"/>
+  <text x="338" y="291" fill="#888" font-size="8" font-style="italic">Specific fix: use Cannon</text>
+  <text x="338" y="302" fill="#888" font-size="8" font-style="italic">defensively first, then...</text>
+  <!-- typing indicator -->
+  <circle cx="454" cy="295" r="3" fill="#F5A623" opacity="0.4"/>
+  <circle cx="462" cy="295" r="3" fill="#F5A623" opacity="0.7"/>
+  <circle cx="470" cy="295" r="3" fill="#F5A623"/>
+
+  <!-- Quick chips -->
+  <rect x="328" y="314" width="66" height="20" rx="10" fill="#1E1E32" stroke="#F5A623" stroke-width="0.5"/>
+  <text x="361" y="327" text-anchor="middle" fill="#F5A623" font-size="7">Best counter?</text>
+  <rect x="400" y="314" width="60" height="20" rx="10" fill="#1E1E32" stroke="#F5A623" stroke-width="0.5"/>
+  <text x="430" y="327" text-anchor="middle" fill="#F5A623" font-size="7">Fix my deck</text>
+  <rect x="466" y="314" width="68" height="20" rx="10" fill="#1E1E32" stroke="#F5A623" stroke-width="0.5"/>
+  <text x="500" y="327" text-anchor="middle" fill="#F5A623" font-size="7">Meta tip today</text>
+
+  <!-- Input bar -->
+  <rect x="328" y="492" width="220" height="36" fill="#161626"/>
+  <rect x="334" y="498" width="168" height="24" rx="12" fill="#252538"/>
+  <text x="346" y="514" fill="#555" font-size="8">Ask your coach...</text>
+  <circle cx="514" cy="510" r="11" fill="#F5A623"/>
+  <text x="514" y="514" text-anchor="middle" fill="#0A0A0F" font-size="12">↑</text>
+
+  <!-- Tab bar -->
+  <rect x="320" y="530" width="220" height="40" fill="#161626"/>
+  <text x="352" y="554" text-anchor="middle" fill="#666" font-size="14">⊞</text>
+  <text x="352" y="566" text-anchor="middle" fill="#666" font-size="6">Home</text>
+  <text x="392" y="554" text-anchor="middle" fill="#666" font-size="14">⚔</text>
+  <text x="392" y="566" text-anchor="middle" fill="#666" font-size="6">Battles</text>
+  <text x="432" y="554" text-anchor="middle" fill="#F5A623" font-size="14">💬</text>
+  <text x="432" y="566" text-anchor="middle" fill="#F5A623" font-size="6">Coach</text>
+  <text x="472" y="554" text-anchor="middle" fill="#666" font-size="14">📈</text>
+  <text x="472" y="566" text-anchor="middle" fill="#666" font-size="6">Trends</text>
+  <text x="512" y="554" text-anchor="middle" fill="#666" font-size="14">🃏</text>
+  <text x="512" y="566" text-anchor="middle" fill="#666" font-size="6">Decks</text>
+
+  <text x="430" y="600" text-anchor="middle" fill="#666" font-size="11" font-style="italic">AI Coach Chat</text>
+
+  <!-- ============ SCREEN 3: Trend Analysis ============ -->
+  <rect x="590" y="60" width="240" height="520" rx="36" fill="#1C1C2E" stroke="#3A3A5C" stroke-width="2"/>
+  <rect x="600" y="70" width="220" height="500" rx="28" fill="#0F0F1A"/>
+  <rect x="670" y="70" width="80" height="18" rx="9" fill="#1C1C2E"/>
+
+  <rect x="600" y="88" width="220" height="38" fill="#161626"/>
+  <text x="710" y="111" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="700">Meta Trends</text>
+  <text x="808" y="111" fill="#F5A623" font-size="8" text-anchor="end">Season 62</text>
+
+  <!-- Filter chips -->
+  <rect x="606" y="132" width="42" height="16" rx="8" fill="#F5A623"/>
+  <text x="627" y="143" text-anchor="middle" fill="#0A0A0F" font-size="7" font-weight="700">7 days</text>
+  <rect x="654" y="132" width="42" height="16" rx="8" fill="#252538"/>
+  <text x="675" y="143" text-anchor="middle" fill="#888" font-size="7">30 days</text>
+  <rect x="702" y="132" width="48" height="16" rx="8" fill="#252538"/>
+  <text x="726" y="143" text-anchor="middle" fill="#888" font-size="7">Season</text>
+
+  <!-- Mini chart area -->
+  <rect x="606" y="154" width="208" height="80" rx="10" fill="#1E1E32"/>
+  <text x="616" y="168" fill="#888" font-size="8" letter-spacing="1">WIN RATE TREND (7D)</text>
+  <!-- Chart lines -->
+  <polyline points="616,220 635,215 654,218 673,208 692,205 711,200 730,196 749,198 768,192 787,188 806,184" fill="none" stroke="#4CAF50" stroke-width="2"/>
+  <polyline points="616,228 635,230 654,225 673,228 692,232 711,226 730,224 749,228 768,222 787,220 806,218" fill="none" stroke="#2196F3" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="610" y="232" fill="#888" font-size="6">55%</text>
+  <text x="610" y="210" fill="#888" font-size="6">65%</text>
+  <!-- Legend -->
+  <line x1="616" y1="228" x2="626" y2="228" stroke="#4CAF50" stroke-width="2"/>
+  <text x="629" y="230" fill="#888" font-size="6">Your deck</text>
+  <line x1="660" y1="228" x2="670" y2="228" stroke="#2196F3" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <text x="673" y="230" fill="#888" font-size="6">Meta avg</text>
+
+  <!-- Top Archetypes -->
+  <text x="616" y="250" fill="#888" font-size="9" font-weight="600" letter-spacing="1">HOT ARCHETYPES</text>
+
+  <rect x="606" y="256" width="208" height="34" rx="8" fill="#1E1E32"/>
+  <rect x="606" y="256" width="4" height="34" rx="2" fill="#F5A623"/>
+  <text x="618" y="268" fill="#FFFFFF" font-size="9" font-weight="700">Hog 2.6 Cycle</text>
+  <text x="618" y="280" fill="#888" font-size="7">Used by 18.4% of players</text>
+  <text x="802" y="272" fill="#4CAF50" font-size="9" font-weight="700" text-anchor="end">61.2%</text>
+  <text x="802" y="282" fill="#888" font-size="7" text-anchor="end">↑+2.1</text>
+
+  <rect x="606" y="296" width="208" height="34" rx="8" fill="#1E1E32"/>
+  <rect x="606" y="296" width="4" height="34" rx="2" fill="#9C27B0"/>
+  <text x="618" y="308" fill="#FFFFFF" font-size="9" font-weight="700">Golem NW Beat</text>
+  <text x="618" y="320" fill="#888" font-size="7">Used by 12.1% of players</text>
+  <text x="802" y="312" fill="#F44336" font-size="9" font-weight="700" text-anchor="end">54.8%</text>
+  <text x="802" y="322" fill="#F44336" font-size="7" text-anchor="end">↓-1.3</text>
+
+  <rect x="606" y="336" width="208" height="34" rx="8" fill="#1E1E32"/>
+  <rect x="606" y="336" width="4" height="34" rx="2" fill="#2196F3"/>
+  <text x="618" y="348" fill="#FFFFFF" font-size="9" font-weight="700">Miner Wall Breakers</text>
+  <text x="618" y="360" fill="#888" font-size="7">Used by 9.8% of players</text>
+  <text x="802" y="352" fill="#4CAF50" font-size="9" font-weight="700" text-anchor="end">58.6%</text>
+  <text x="802" y="362" fill="#888" font-size="7" text-anchor="end">→ stable</text>
+
+  <!-- AI Meta Insight -->
+  <rect x="606" y="378" width="208" height="52" rx="10" fill="#1A1A2E" stroke="#F5A623" stroke-width="0.5"/>
+  <text x="616" y="392" fill="#F5A623" font-size="8" font-weight="700">🤖 AI Meta Insight</text>
+  <text x="616" y="405" fill="#CCCCCC" font-size="7.5">Hog cycle dominating 7000+ due to</text>
+  <text x="616" y="416" fill="#CCCCCC" font-size="7.5">Goblin Barrel nerf. Expect this to</text>
+  <text x="616" y="427" fill="#CCCCCC" font-size="7.5">stabilize by mid-season. Build around it.</text>
+
+  <!-- Tab bar -->
+  <rect x="600" y="530" width="220" height="40" fill="#161626"/>
+  <text x="632" y="554" text-anchor="middle" fill="#666" font-size="14">⊞</text>
+  <text x="672" y="554" text-anchor="middle" fill="#666" font-size="14">⚔</text>
+  <text x="712" y="554" text-anchor="middle" fill="#666" font-size="14">💬</text>
+  <text x="752" y="554" text-anchor="middle" fill="#F5A623" font-size="14">📈</text>
+  <text x="752" y="566" text-anchor="middle" fill="#F5A623" font-size="6">Trends</text>
+  <text x="792" y="554" text-anchor="middle" fill="#666" font-size="14">🃏</text>
+
+  <text x="710" y="600" text-anchor="middle" fill="#666" font-size="11" font-style="italic">Meta Trends</text>
+
+  <!-- ============ SCREEN 4: Battle Analysis ============ -->
+  <rect x="870" y="60" width="240" height="520" rx="36" fill="#1C1C2E" stroke="#3A3A5C" stroke-width="2"/>
+  <rect x="880" y="70" width="220" height="500" rx="28" fill="#0F0F1A"/>
+  <rect x="950" y="70" width="80" height="18" rx="9" fill="#1C1C2E"/>
+
+  <rect x="880" y="88" width="220" height="48" fill="#161626"/>
+  <text x="920" y="108" fill="#888" font-size="8">← Battles</text>
+  <text x="990" y="108" text-anchor="middle" fill="#FFFFFF" font-size="10" font-weight="700">Battle Analysis</text>
+  <rect x="1067" y="98" width="24" height="14" rx="7" fill="#F5A62320"/>
+  <text x="1079" y="108" text-anchor="middle" fill="#F5A623" font-size="8">AI</text>
+
+  <!-- Battle result banner -->
+  <rect x="880" y="136" width="220" height="40" fill="#1A3A1A"/>
+  <text x="990" y="150" text-anchor="middle" fill="#4CAF50" font-size="12" font-weight="800">VICTORY +30 🏆</text>
+  <text x="990" y="165" text-anchor="middle" fill="#888" font-size="8">Hog 2.6 vs Golem NW · 3:14</text>
+
+  <!-- Elixir efficiency -->
+  <rect x="886" y="182" width="98" height="44" rx="8" fill="#1E1E32"/>
+  <text x="896" y="196" fill="#888" font-size="7">ELIXIR EFF.</text>
+  <text x="896" y="212" fill="#4CAF50" font-size="16" font-weight="800">2.4</text>
+  <text x="896" y="222" fill="#888" font-size="7">avg elixir traded</text>
+
+  <rect x="992" y="182" width="100" height="44" rx="8" fill="#1E1E32"/>
+  <text x="1002" y="196" fill="#888" font-size="7">TOWER DMG</text>
+  <text x="1002" y="212" fill="#FFFFFF" font-size="16" font-weight="800">1,842</text>
+  <text x="1002" y="222" fill="#888" font-size="7">dealt / 980 taken</text>
+
+  <!-- AI Coaching Report -->
+  <text x="896" y="242" fill="#888" font-size="9" font-weight="600" letter-spacing="1">AI COACHING REPORT</text>
+
+  <!-- Mistake 1 -->
+  <rect x="886" y="248" width="208" height="36" rx="8" fill="#3A1A1A"/>
+  <rect x="886" y="248" width="3" height="36" rx="1.5" fill="#F44336"/>
+  <text x="896" y="260" fill="#F44336" font-size="8" font-weight="700">⚠ Mistake: Early Hog at 2x</text>
+  <text x="896" y="272" fill="#CCCCCC" font-size="7.5">You played Hog with only 3 elixir remaining.</text>
+  <text x="896" y="282" fill="#CCCCCC" font-size="7.5">Wait for opponent to commit first.</text>
+
+  <!-- Good play -->
+  <rect x="886" y="290" width="208" height="36" rx="8" fill="#1A3A1A"/>
+  <rect x="886" y="290" width="3" height="36" rx="1.5" fill="#4CAF50"/>
+  <text x="896" y="302" fill="#4CAF50" font-size="8" font-weight="700">✓ Great: Cannon placement</text>
+  <text x="896" y="314" fill="#CCCCCC" font-size="7.5">Perfect kite on Mega Minion at 0:45.</text>
+  <text x="896" y="324" fill="#CCCCCC" font-size="7.5">Saved tower from 400+ damage.</text>
+
+  <!-- Improvement tip -->
+  <rect x="886" y="332" width="208" height="46" rx="8" fill="#1A1A3A"/>
+  <rect x="886" y="332" width="3" height="46" rx="1.5" fill="#F5A623"/>
+  <text x="896" y="344" fill="#F5A623" font-size="8" font-weight="700">💡 Focus: Cycle timing</text>
+  <text x="896" y="356" fill="#CCCCCC" font-size="7.5">Practice: track opponent's Golem cycle.</text>
+  <text x="896" y="367" fill="#CCCCCC" font-size="7.5">Attack when they're at &lt;4 elixir and</text>
+  <text x="896" y="376" fill="#CCCCCC" font-size="7.5">can't support with Night Witch.</text>
+
+  <!-- Overall score -->
+  <rect x="886" y="384" width="208" height="36" rx="8" fill="#1E1E32"/>
+  <text x="896" y="398" fill="#888" font-size="8">PERFORMANCE SCORE</text>
+  <rect x="896" y="404" width="120" height="8" rx="4" fill="#252538"/>
+  <rect x="896" y="404" width="86" height="8" rx="4" fill="#F5A623"/>
+  <text x="1026" y="412" fill="#F5A623" font-size="8" font-weight="700">72/100</text>
+
+  <!-- Tab bar -->
+  <rect x="880" y="530" width="220" height="40" fill="#161626"/>
+  <text x="912" y="554" text-anchor="middle" fill="#666" font-size="14">⊞</text>
+  <text x="952" y="554" text-anchor="middle" fill="#F5A623" font-size="14">⚔</text>
+  <text x="952" y="566" text-anchor="middle" fill="#F5A623" font-size="6">Battles</text>
+  <text x="992" y="554" text-anchor="middle" fill="#666" font-size="14">💬</text>
+  <text x="1032" y="554" text-anchor="middle" fill="#666" font-size="14">📈</text>
+  <text x="1072" y="554" text-anchor="middle" fill="#666" font-size="14">🃏</text>
+
+  <text x="990" y="600" text-anchor="middle" fill="#666" font-size="11" font-style="italic">Battle Analysis</text>
+
+  <!-- ============ SCREEN 5: Deck Lab ============ -->
+  <rect x="1150" y="60" width="240" height="520" rx="36" fill="#1C1C2E" stroke="#3A3A5C" stroke-width="2"/>
+  <rect x="1160" y="70" width="220" height="500" rx="28" fill="#0F0F1A"/>
+  <rect x="1230" y="70" width="80" height="18" rx="9" fill="#1C1C2E"/>
+
+  <rect x="1160" y="88" width="220" height="38" fill="#161626"/>
+  <text x="1270" y="111" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="700">Deck Lab 🧪</text>
+
+  <text x="1166" y="140" fill="#888" font-size="8">YOUR DECK · 3.0 avg elixir</text>
+
+  <!-- Card grid 4x2 -->
+  <!-- Row 1 -->
+  <rect x="1166" y="146" width="46" height="52" rx="6" fill="#1E1E32" stroke="#F5A623" stroke-width="1"/>
+  <text x="1189" y="165" text-anchor="middle" fill="#FFFFFF" font-size="18">🐗</text>
+  <text x="1189" y="178" text-anchor="middle" fill="#CCCCCC" font-size="6">Hog Rider</text>
+  <text x="1189" y="188" text-anchor="middle" fill="#F5A623" font-size="8" font-weight="700">4</text>
+
+  <rect x="1218" y="146" width="46" height="52" rx="6" fill="#1E1E32" stroke="#888" stroke-width="0.5"/>
+  <text x="1241" y="165" text-anchor="middle" fill="#FFFFFF" font-size="18">💀</text>
+  <text x="1241" y="178" text-anchor="middle" fill="#CCCCCC" font-size="6">Skeletons</text>
+  <text x="1241" y="188" text-anchor="middle" fill="#4CAF50" font-size="8" font-weight="700">1</text>
+
+  <rect x="1270" y="146" width="46" height="52" rx="6" fill="#1E1E32" stroke="#888" stroke-width="0.5"/>
+  <text x="1293" y="165" text-anchor="middle" fill="#FFFFFF" font-size="18">💣</text>
+  <text x="1293" y="178" text-anchor="middle" fill="#CCCCCC" font-size="6">Cannon</text>
+  <text x="1293" y="188" text-anchor="middle" fill="#4CAF50" font-size="8" font-weight="700">3</text>
+
+  <rect x="1322" y="146" width="46" height="52" rx="6" fill="#1E1E32" stroke="#888" stroke-width="0.5"/>
+  <text x="1345" y="165" text-anchor="middle" fill="#FFFFFF" font-size="18">🎈</text>
+  <text x="1345" y="178" text-anchor="middle" fill="#CCCCCC" font-size="6">Balloon</text>
+  <text x="1345" y="188" text-anchor="middle" fill="#F44336" font-size="8" font-weight="700">5</text>
+
+  <!-- Row 2 -->
+  <rect x="1166" y="204" width="46" height="52" rx="6" fill="#1E1E32" stroke="#888" stroke-width="0.5"/>
+  <text x="1189" y="223" text-anchor="middle" fill="#FFFFFF" font-size="18">🔥</text>
+  <text x="1189" y="236" text-anchor="middle" fill="#CCCCCC" font-size="5">Fireball</text>
+  <text x="1189" y="246" text-anchor="middle" fill="#2196F3" font-size="8" font-weight="700">4</text>
+
+  <rect x="1218" y="204" width="46" height="52" rx="6" fill="#1E1E32" stroke="#888" stroke-width="0.5"/>
+  <text x="1241" y="223" text-anchor="middle" fill="#FFFFFF" font-size="18">🏹</text>
+  <text x="1241" y="236" text-anchor="middle" fill="#CCCCCC" font-size="5">Arrows</text>
+  <text x="1241" y="246" text-anchor="middle" fill="#4CAF50" font-size="8" font-weight="700">3</text>
+
+  <rect x="1270" y="204" width="46" height="52" rx="6" fill="#1E1E32" stroke="#888" stroke-width="0.5"/>
+  <text x="1293" y="223" text-anchor="middle" fill="#FFFFFF" font-size="18">🧙</text>
+  <text x="1293" y="236" text-anchor="middle" fill="#CCCCCC" font-size="5">Musketeer</text>
+  <text x="1293" y="246" text-anchor="middle" fill="#2196F3" font-size="8" font-weight="700">4</text>
+
+  <rect x="1322" y="204" width="46" height="52" rx="6" fill="#1E1E32" stroke="#888" stroke-width="0.5"/>
+  <text x="1345" y="223" text-anchor="middle" fill="#FFFFFF" font-size="18">💚</text>
+  <text x="1345" y="236" text-anchor="middle" fill="#CCCCCC" font-size="5">Ice Golem</text>
+  <text x="1345" y="246" text-anchor="middle" fill="#4CAF50" font-size="8" font-weight="700">2</text>
+
+  <!-- Elixir curve bar chart -->
+  <text x="1166" y="272" fill="#888" font-size="8" letter-spacing="1">ELIXIR CURVE</text>
+  <rect x="1166" y="278" width="208" height="44" rx="8" fill="#1E1E32"/>
+  <!-- bars -->
+  <rect x="1182" y="298" width="14" height="18" rx="2" fill="#4CAF50"/>
+  <rect x="1202" y="290" width="14" height="26" rx="2" fill="#4CAF50"/>
+  <rect x="1222" y="286" width="14" height="30" rx="2" fill="#F5A623"/>
+  <rect x="1242" y="292" width="14" height="24" rx="2" fill="#F5A623"/>
+  <rect x="1262" y="296" width="14" height="20" rx="2" fill="#2196F3"/>
+  <rect x="1282" y="308" width="14" height="8" rx="2" fill="#9C27B0"/>
+  <text x="1182" y="318" fill="#666" font-size="6">1</text>
+  <text x="1202" y="318" fill="#666" font-size="6">2</text>
+  <text x="1222" y="318" fill="#666" font-size="6">3</text>
+  <text x="1242" y="318" fill="#666" font-size="6">4</text>
+  <text x="1262" y="318" fill="#666" font-size="6">5</text>
+  <text x="1282" y="318" fill="#666" font-size="6">6</text>
+
+  <!-- AI suggestion -->
+  <rect x="1166" y="328" width="208" height="52" rx="10" fill="#1A1A2E" stroke="#F5A623" stroke-width="0.5"/>
+  <text x="1176" y="342" fill="#F5A623" font-size="8" font-weight="700">🤖 AI Deck Suggestion</text>
+  <text x="1176" y="355" fill="#CCCCCC" font-size="7.5">Replace Balloon with Goblin Barrel</text>
+  <text x="1176" y="366" fill="#CCCCCC" font-size="7.5">to increase cycle speed. Lowers avg</text>
+  <text x="1176" y="377" fill="#CCCCCC" font-size="7.5">elixir to 2.8 — better for current meta.</text>
+
+  <!-- Weaknesses -->
+  <rect x="1166" y="386" width="208" height="30" rx="8" fill="#1E1E32"/>
+  <text x="1176" y="399" fill="#888" font-size="7">WEAK AGAINST:</text>
+  <rect x="1242" y="391" width="46" height="16" rx="8" fill="#F4433620"/>
+  <text x="1265" y="403" text-anchor="middle" fill="#F44336" font-size="7">Lava Hound</text>
+  <rect x="1294" y="391" width="36" height="16" rx="8" fill="#F4433620"/>
+  <text x="1312" y="403" text-anchor="middle" fill="#F44336" font-size="7">3 Musk</text>
+
+  <!-- CTA -->
+  <rect x="1166" y="422" width="208" height="32" rx="16" fill="#F5A623"/>
+  <text x="1270" y="443" text-anchor="middle" fill="#0A0A0F" font-size="10" font-weight="700">Apply AI Suggestions →</text>
+
+  <!-- Tab bar -->
+  <rect x="1160" y="530" width="220" height="40" fill="#161626"/>
+  <text x="1192" y="554" text-anchor="middle" fill="#666" font-size="14">⊞</text>
+  <text x="1232" y="554" text-anchor="middle" fill="#666" font-size="14">⚔</text>
+  <text x="1272" y="554" text-anchor="middle" fill="#666" font-size="14">💬</text>
+  <text x="1312" y="554" text-anchor="middle" fill="#666" font-size="14">📈</text>
+  <text x="1352" y="554" text-anchor="middle" fill="#F5A623" font-size="14">🃏</text>
+  <text x="1352" y="566" text-anchor="middle" fill="#F5A623" font-size="6">Decks</text>
+
+  <text x="1270" y="600" text-anchor="middle" fill="#666" font-size="11" font-style="italic">Deck Lab</text>
+
+  <!-- Screen labels at top -->
+  <text x="150" y="55" text-anchor="middle" fill="#F5A623" font-size="9" font-weight="600" letter-spacing="1">SCREEN 1</text>
+  <text x="430" y="55" text-anchor="middle" fill="#F5A623" font-size="9" font-weight="600" letter-spacing="1">SCREEN 2</text>
+  <text x="710" y="55" text-anchor="middle" fill="#F5A623" font-size="9" font-weight="600" letter-spacing="1">SCREEN 3</text>
+  <text x="990" y="55" text-anchor="middle" fill="#F5A623" font-size="9" font-weight="600" letter-spacing="1">SCREEN 4</text>
+  <text x="1270" y="55" text-anchor="middle" fill="#F5A623" font-size="9" font-weight="600" letter-spacing="1">SCREEN 5</text>
+
+  <!-- Bottom legend -->
+  <text x="700" y="630" text-anchor="middle" fill="#444" font-size="10">Dark navy theme · SF Pro Display · SF Symbols 5 · Clash Royale gold accent (#F5A623)</text>
+  <text x="700" y="648" text-anchor="middle" fill="#444" font-size="9">iOS 17+ · SwiftUI · Dark Mode Primary · Dynamic Type supported</text>
+
+</svg>

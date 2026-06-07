@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Concept 5: Pulse — monochrome.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="CoachRoyale pulse mark">
+  <title>CoachRoyale</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 36 L18 36 L22 24 L26 36 L30 36 L32 42 L36 10 L40 42 L42 36 L46 36 L50 24 L54 36 L56 36"
+          stroke-width="3.5"/>
+    <!-- Base band as a single thick stroke -->
+    <line x1="14" y1="50" x2="50" y2="50" stroke-width="4"/>
+    <!-- Filled jewels -->
+    <circle cx="36" cy="10" r="2.6" fill="currentColor" stroke="none"/>
+    <circle cx="22" cy="24" r="1.6" fill="currentColor" stroke="none"/>
+    <circle cx="50" cy="24" r="1.6" fill="currentColor" stroke="none"/>
+  </g>
+</svg>

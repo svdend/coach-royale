@@ -1,0 +1,30 @@
+{
+  "name": "coachroyale-api-worker",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "tsc --noEmit",
+    "test": "vitest run",
+    "eval:agent": "vitest run --config vitest.eval.config.ts",
+    "deploy:dry-run": "wrangler deploy --dry-run --outdir dist",
+    "render:production-config": "node ./scripts/worker-runtime-config.mjs render-production",
+    "verify:remote-secrets": "node ./scripts/worker-runtime-config.mjs verify-remote-secrets"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.100.0",
+    "hono": "^4.12.15",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260425.1",
+    "@types/node": "^24.12.0",
+    "prettier": "^3.8.3",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.1",
+    "wrangler": "^4.46.0"
+  }
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Concept 2: Sentinel — monochrome.
+  Single-color, currentColor inheritance. The lens becomes a stroked
+  ring rather than a fill so the mark stays light at small sizes.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="CoachRoyale sentinel mark">
+  <title>CoachRoyale</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Handle -->
+    <rect x="40" y="40" width="6" height="22" rx="3"
+          transform="rotate(45 43 51)"
+          fill="currentColor" stroke="none"/>
+    <!-- Lens ring -->
+    <circle cx="28" cy="36" r="16" stroke-width="4"/>
+    <!-- Crown on top, filled silhouette -->
+    <g transform="translate(16 8)">
+      <path d="M0 16 L-2 4 L6 8 L12 0 L18 8 L26 4 L24 16 Z"
+            fill="currentColor" stroke-width="1"/>
+      <rect x="-1" y="16" width="26" height="3" rx="1"
+            fill="currentColor" stroke="none"/>
+    </g>
+    <!-- Up chevron inside lens -->
+    <path d="M22 40 L28 32 L34 40" stroke-width="3"/>
+    <line x1="28" y1="32" x2="28" y2="44" stroke-width="3"/>
+  </g>
+</svg>

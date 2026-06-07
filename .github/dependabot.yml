@@ -1,0 +1,42 @@
+version: 2
+updates:
+  # GitHub Actions
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    labels: [dependencies, ci]
+
+  # Static-IP relay (Python)
+  - package-ecosystem: pip
+    directory: /apps/relay
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    labels: [dependencies, relay]
+
+  # Cloudflare Pages SPA (Vite + React)
+  - package-ecosystem: npm
+    directory: /apps/web
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    labels: [dependencies, frontend]
+    groups:
+      react:
+        patterns: ["react", "react-dom", "@types/react*"]
+      tailwind:
+        patterns: ["tailwindcss", "@tailwindcss/*", "tw-animate-css"]
+      testing:
+        patterns: ["vitest", "@testing-library/*", "jsdom"]
+      eslint:
+        patterns: ["eslint", "eslint-*", "typescript-eslint", "@eslint/*"]
+
+  # Cloudflare Worker BFF (Hono)
+  - package-ecosystem: npm
+    directory: /apps/api-worker
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 3
+    labels: [dependencies, worker]

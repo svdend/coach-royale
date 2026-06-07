@@ -1,0 +1,32 @@
+# Base/local Worker config only.
+# Production deploys render `.wrangler/production.toml` from explicit
+# WORKER_* environment variables via `scripts/worker-runtime-config.mjs`.
+name = "coachroyale-api"
+main = "src/index.ts"
+compatibility_date = "2026-04-23"
+
+# Cloudflare Workers Rate Limiting binding for the unauthenticated relay
+# routes (/api/player/*, /api/clan/:tag, /api/cards). These routes spend
+# the relay's Supercell API token, so abuse without an auth layer would
+# burn through quota. 30 req / 60s per CF-Connecting-IP is generous for
+# normal app use (Overview tab triggers ~5 calls per player lookup) and
+# tight enough to neutralize trivial scrapers. Tune up if real users hit it.
+[[unsafe.bindings]]
+name = "RELAY_LIMITER"
+type = "ratelimit"
+namespace_id = "1001"
+simple = { limit = 30, period = 60 }
+
+[ai]
+binding = "AI"
+
+[[analytics_engine_datasets]]
+binding = "AI_EVENTS"
+dataset = "coachroyale_ai_events"
+
+[vars]
+ALLOWED_ORIGINS = "https://coach-royale.com,https://coach-royale.com,https://www.coach-royale.com,https://coach-royale-web.pages.dev,http://localhost:5173,http://127.0.0.1:5173"
+ANTHROPIC_MODEL = "claude-sonnet-4-20250514"
+WORKERS_AI_MODEL = "@cf/openai/gpt-oss-20b"
+AI_GATEWAY_ID = "coachroyale-free"
+STRUCTURED_LOGS_ENABLED = "false"

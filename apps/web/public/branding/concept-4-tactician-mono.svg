@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Concept 4: Tactician — monochrome.
+  Single-color silhouette. Crest gem becomes a punched-out diamond
+  via an even-odd path so the mark stays one shape.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="CoachRoyale tactician mark">
+  <title>CoachRoyale</title>
+  <path fill="currentColor" fill-rule="evenodd" d="
+    M16 12
+    h6 v6 h6 v-6
+    h6 v6 h6 v-6
+    h6
+    v8
+    l-2 4
+    v18
+    l3 4
+    v6
+    h-32
+    v-6
+    l3 -4
+    v-18
+    l-2 -4
+    z
+    M32 32
+    l4 4
+    l-4 4
+    l-4 -4
+    z"/>
+</svg>

@@ -1,0 +1,90 @@
+repos:
+  # ── Python: fast linter + formatter (PEP 8, isort, pyflakes, Google style subset) ──
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.9.10
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+
+  # ── Python security static analysis (OWASP top issues, hardcoded secrets) ──
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.8.3
+    hooks:
+      - id: bandit
+        args: [-c, pyproject.toml]
+        files: ^apps/relay/
+
+  # ── General hygiene ────────────────────────────────────────────────────────
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+        exclude: tsconfig.*\.json$
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: [--maxkb=500]
+      - id: detect-private-key            # blocks accidental key commits
+      - id: no-commit-to-branch
+        args: [--branch, main, --branch, dashboard]  # no direct commits to deploy branches
+
+  # ── Frontend + Worker: Prettier and ESLint (staged files only) ──────────
+  # Notes for these hooks:
+  #   * pre-commit passes filenames RELATIVE TO THE REPO ROOT, so we must
+  #     invoke prettier/eslint from the repo root (not via `cd apps/web`) for
+  #     the paths to resolve. Each app keeps its own .prettierrc/.eslintrc
+  #     because prettier/eslint look up nearest config from the file path.
+  #   * `npx --prefix` isolates the binary lookup to that app's node_modules.
+  - repo: local
+    hooks:
+      - id: web-prettier
+        name: prettier (apps/web)
+        language: system
+        entry: npx --prefix apps/web --no-install prettier --write
+        files: ^apps/web/.*\.(ts|tsx|js|jsx|json|css)$
+        exclude: ^apps/web/(node_modules|dist)/
+        pass_filenames: true
+        require_serial: true
+        stages: [pre-commit]
+
+      - id: web-eslint
+        name: eslint (apps/web)
+        language: system
+        # eslint v9 looks for eslint.config.js at the CWD (not relative to the
+        # file). Run eslint from apps/web/ so it finds the config, and don't
+        # pass filenames — eslint walks the include set from cwd. This costs
+        # us per-file scoping; in exchange we always run against the right
+        # config file. Acceptable: the hook only fires when files in
+        # apps/web/ change (the `files:` regex), so it stays scoped overall.
+        entry: bash -c 'cd apps/web && npx --no-install eslint --max-warnings=0 .'
+        files: ^apps/web/.*\.(ts|tsx|js|jsx)$
+        exclude: ^apps/web/(node_modules|dist)/
+        pass_filenames: false
+        require_serial: true
+        stages: [pre-commit]
+
+      - id: worker-prettier
+        name: prettier (apps/api-worker)
+        language: system
+        entry: npx --prefix apps/api-worker --no-install prettier --write
+        files: ^apps/api-worker/.*\.(ts|js|json)$
+        exclude: ^apps/api-worker/(node_modules|dist)/
+        pass_filenames: true
+        require_serial: true
+        stages: [pre-commit]
+
+      - id: worker-typecheck
+        name: typecheck (apps/api-worker)
+        language: system
+        # Worker has no eslint; lint script is `tsc --noEmit`. Run the same here.
+        # tsc must run from the worker dir to pick up its tsconfig, and we
+        # don't pass filenames — tsc reads tsconfig and walks the include set.
+        entry: bash -c 'cd apps/api-worker && npx --no-install tsc --noEmit'
+        files: ^apps/api-worker/.*\.(ts|tsx)$
+        exclude: ^apps/api-worker/(node_modules|dist)/
+        pass_filenames: false
+        require_serial: true
+        stages: [pre-commit]

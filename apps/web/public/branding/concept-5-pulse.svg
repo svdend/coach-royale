@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Concept 5: Pulse
+  A crown silhouette assembled from a battle/heartbeat waveform. The
+  flat baseline + sharp QRS-style pulse + return to baseline forms
+  the three-peak crown shape, with the tallest spike as the center
+  jewel position. The waveform metaphor doubles as "match telemetry"
+  and "vital signs of your account" — exactly what the AI analysis
+  surface produces. The most visually kinetic of the five.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="CoachRoyale pulse mark">
+  <title>CoachRoyale</title>
+  <!-- Plate, slightly cooler tone to differentiate from siblings -->
+  <rect x="2" y="2" width="60" height="60" rx="14" ry="14" fill="#0a0a23"/>
+
+  <!-- Background grid (very subtle, suggests a chart) -->
+  <g stroke="#15153a" stroke-width="1">
+    <line x1="14" y1="20" x2="50" y2="20"/>
+    <line x1="14" y1="32" x2="50" y2="32"/>
+    <line x1="14" y1="44" x2="50" y2="44"/>
+  </g>
+
+  <!-- The waveform-crown.
+       Path reads:
+       - flat at y=36
+       - small pulse up to y=24 (left peak)
+       - flat
+       - sharp pulse down to y=42 (left valley)
+       - sharp pulse up to y=10 (center peak — tallest)
+       - sharp pulse down to y=42 (right valley)
+       - small pulse up to y=24 (right peak)
+       - flat to right edge
+       The vertical sweeps are angled, not vertical, so the mark
+       reads as a crown not a spike.
+  -->
+  <path d="M8 36
+           L18 36
+           L22 24
+           L26 36
+           L30 36
+           L32 42
+           L36 10
+           L40 42
+           L42 36
+           L46 36
+           L50 24
+           L54 36
+           L56 36"
+        fill="none"
+        stroke="#f0c544"
+        stroke-width="3.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+  <!-- Centre jewel sits on top of the tallest spike -->
+  <circle cx="36" cy="10" r="3" fill="#6b46c1" stroke="#0a0a23" stroke-width="1.5"/>
+
+  <!-- Side jewels at the smaller peaks (smaller for hierarchy) -->
+  <circle cx="22" cy="24" r="2" fill="#d4a017" stroke="#0a0a23" stroke-width="1"/>
+  <circle cx="50" cy="24" r="2" fill="#d4a017" stroke="#0a0a23" stroke-width="1"/>
+
+  <!-- Base band so the silhouette has weight at the bottom -->
+  <rect x="12" y="48" width="40" height="5" rx="1.5" fill="#d4a017"/>
+  <rect x="12" y="48" width="40" height="2" fill="#f0c544"/>
+</svg>

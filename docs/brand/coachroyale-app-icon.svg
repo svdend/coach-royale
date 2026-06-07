@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">CoachRoyale app icon</title>
+  <desc id="desc">A simplified gold crown-shield strategy mark with a cyan upward notch on a dark rounded-square tile.</desc>
+  <defs>
+    <linearGradient id="tile" x1="88" x2="424" y1="60" y2="452" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#18233C" />
+      <stop offset="0.58" stop-color="#101827" />
+      <stop offset="1" stop-color="#080D1A" />
+    </linearGradient>
+    <linearGradient id="gold" x1="154" x2="358" y1="124" y2="382" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE79A" />
+      <stop offset="0.5" stop-color="#F6C343" />
+      <stop offset="1" stop-color="#D9961F" />
+    </linearGradient>
+    <filter id="shadow" x="112" y="94" width="288" height="322" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="18" flood-color="#020617" flood-opacity="0.42" stdDeviation="16" />
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" fill="url(#tile)" rx="112" />
+  <path fill="#26314D" fill-opacity="0.34" d="M96 126c43-43 98-64 166-64 67 0 120 21 158 64-43-16-91-24-144-24-76 0-136 18-180 54v-30Z" />
+
+  <g filter="url(#shadow)">
+    <path fill="#0B1020" fill-opacity="0.35" d="M256 112 380 184l-34 134-90 80-90-80-34-134 124-72Z" />
+    <path fill="url(#gold)" d="M256 104 303 197 374 157 346 306 256 386 166 306 138 157 209 197 256 104Z" />
+    <path fill="#FFF4C2" fill-opacity="0.5" d="M256 140 294 216 334 194 322 258 287 246 256 184 225 246 190 258 178 194 218 216 256 140Z" />
+    <path fill="#101827" fill-opacity="0.22" d="M174 284h164l-8 29-74 66-74-66-8-29Z" />
+    <path fill="#22D3EE" d="m205 332 51-52 51 52-24 24-27-28-27 28-24-24Z" />
+    <path fill="#E0FBFF" fill-opacity="0.58" d="m221 329 35-36 35 36-10 10-25-25-25 25-10-10Z" />
+  </g>
+</svg>

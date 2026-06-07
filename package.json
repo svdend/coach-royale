@@ -1,0 +1,24 @@
+{
+  "name": "coachroyale-cf-bff",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "npm@10.9.4",
+  "scripts": {
+    "build": "npm run build:web && npm run build:worker",
+    "build:web": "npm --prefix apps/web run build",
+    "build:worker": "npm --prefix apps/api-worker run build",
+    "format": "npm run format:web && npm run format:worker",
+    "format:web": "npm --prefix apps/web run format",
+    "format:worker": "npm --prefix apps/api-worker run format",
+    "format:check": "npm run format:check:web && npm run format:check:worker",
+    "format:check:web": "npm --prefix apps/web run format:check",
+    "format:check:worker": "npm --prefix apps/api-worker run format:check",
+    "lint": "npm run lint:web && npm run lint:worker",
+    "lint:web": "npm --prefix apps/web run lint",
+    "lint:worker": "npm --prefix apps/api-worker run lint",
+    "secret:scan": "node scripts/secret-scan.mjs",
+    "test": "npm run test:web && npm run test:worker",
+    "test:web": "npm --prefix apps/web run test",
+    "test:worker": "npm --prefix apps/api-worker run test"
+  }
+}

@@ -1,0 +1,107 @@
+%%{init: {"theme": "base", "themeVariables": {"background": "#0b1220", "primaryColor": "#1f2937", "primaryTextColor": "#f8fafc", "primaryBorderColor": "#64748b", "lineColor": "#94a3b8", "fontFamily": "Inter, ui-sans-serif, system-ui, sans-serif"}, "flowchart": {"curve": "basis", "padding": 18, "nodeSpacing": 38, "rankSpacing": 66}} }%%
+flowchart LR
+  U((Player))
+
+  subgraph Browser["Browser - apps/web"]
+    SPA["React SPA<br/>App.tsx"]
+    LS["Local storage<br/>last tag + BYOK model config"]
+    SBJ["Supabase JS anon client<br/>session + profile reads"]
+  end
+
+  subgraph CF["Cloudflare"]
+    PAGES["Pages<br/>static assets"]
+    BFF["Worker BFF<br/>Hono /api/*"]
+    WAI["Workers AI<br/>optional AI Gateway"]
+    AE["Analytics Engine<br/>AI_EVENTS"]
+  end
+
+  subgraph WorkerModules["Worker domain modules"]
+    AUTHZ["supabase.ts<br/>auth, tier, quotas, persistence"]
+    ROUTER["provider-routing.ts<br/>providerForAccess"]
+    AI["ai.ts<br/>analysis + response + weekly plan"]
+    AGENT["agent.ts + tools.ts<br/>SSE tool loop"]
+    PAY["payments.ts<br/>checkout + webhook"]
+    RELAYCLIENT["relay.ts<br/>signed Supercell client"]
+    THREADS["coach-threads.ts<br/>thread/message IO"]
+    STATS["analytics.ts + battles.ts<br/>PlayerState"]
+  end
+
+  subgraph Data["Supabase"]
+    AUTH["Auth<br/>Google / Discord OAuth"]
+    PG[("Postgres<br/>profiles, tracked players,<br/>analysis history, coach threads,<br/>privacy settings, usage")]
+  end
+
+  subgraph Providers["Model providers"]
+    DET["Deterministic fallback"]
+    ANT["Anthropic"]
+    CUSTOM["Operator custom model<br/>OpenAI-compatible HTTPS"]
+    BYOK["User BYOK endpoint<br/>browser direct"]
+  end
+
+  subgraph Commerce["Billing"]
+    LEMON["Lemon Squeezy"]
+  end
+
+  subgraph GameData["Static-IP Supercell egress"]
+    RELAY["FastAPI relay<br/>apps/relay"]
+    SC["Supercell API"]
+  end
+
+  U -->|"open app"| SPA
+  SPA -->|"load JS/CSS"| PAGES
+  SPA -->|"OAuth/session/profile"| SBJ
+  SBJ --> AUTH
+  SBJ -.->|"residual direct profile read<br/>RLS + anon key"| PG
+  SPA -->|"read/write"| LS
+
+  SPA -->|"HTTPS /api/*<br/>Bearer Supabase JWT when signed in"| BFF
+
+  BFF --> AUTHZ
+  BFF --> ROUTER
+  BFF --> AI
+  BFF --> AGENT
+  BFF --> PAY
+  BFF --> RELAYCLIENT
+  BFF --> THREADS
+  BFF --> STATS
+
+  AUTHZ -->|"verify JWT via /auth/v1/user"| AUTH
+  AUTHZ -->|"service-role app data"| PG
+  THREADS --> PG
+  PAY --> LEMON
+  LEMON -->|"signed webhook"| BFF
+
+  RELAYCLIENT -->|"HTTPS + relay shared secret"| RELAY
+  RELAY -->|"Bearer Supercell token<br/>static IP allowlist"| SC
+  RELAYCLIENT --> STATS
+
+  ROUTER --> DET
+  ROUTER --> WAI
+  ROUTER --> ANT
+  ROUTER --> CUSTOM
+  AI --> WAI
+  AI --> ANT
+  AI --> CUSTOM
+  AGENT --> ANT
+  SPA -.->|"BYOK deep analysis<br/>key never enters Worker"| BYOK
+  BFF -.->|"best-effort telemetry"| AE
+
+  classDef actor fill:#172554,stroke:#60a5fa,color:#eff6ff,stroke-width:2px
+  classDef browser fill:#1e293b,stroke:#38bdf8,color:#e0f2fe,stroke-width:2px
+  classDef cloudflare fill:#431407,stroke:#fb923c,color:#ffedd5,stroke-width:2px
+  classDef module fill:#292524,stroke:#f97316,color:#fff7ed,stroke-width:1.5px
+  classDef data fill:#052e16,stroke:#22c55e,color:#dcfce7,stroke-width:2px
+  classDef ai fill:#2e1065,stroke:#a78bfa,color:#f3e8ff,stroke-width:2px
+  classDef custom fill:#134e4a,stroke:#2dd4bf,color:#ccfbf1,stroke-width:2px
+  classDef billing fill:#422006,stroke:#facc15,color:#fef9c3,stroke-width:2px
+  classDef relay fill:#4c0519,stroke:#f472b6,color:#fce7f3,stroke-width:2px
+
+  class U actor
+  class SPA,LS,SBJ browser
+  class PAGES,BFF,WAI,AE cloudflare
+  class AUTHZ,ROUTER,AI,AGENT,PAY,RELAYCLIENT,THREADS,STATS module
+  class AUTH,PG data
+  class DET,ANT,BYOK ai
+  class CUSTOM custom
+  class LEMON billing
+  class RELAY,SC relay

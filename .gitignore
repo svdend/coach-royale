@@ -1,0 +1,63 @@
+# Environment
+.env
+prototype/backend/.env
+
+# Agent eval reports (AG6) — generated, not checked in
+apps/api-worker/eval/reports/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+dist/
+.pytest_cache/
+
+# Xcode
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+DerivedData/
+*.moved-aside
+*.hmap
+*.ipa
+*.xcarchive
+.build/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+*.swp
+*.swo
+
+# Node
+node_modules/
+.next/
+dist/
+.env.local
+coverage/
+*.tsbuildinfo
+.vite/
+
+# Cloudflare Wrangler
+.wrangler/
+.dev.vars
+
+# AWS CDK
+cdk.out/
+.env*
+# Per-deploy local secrets file lives at ~/.declaw/deploy.env (per-machine,
+# outside the repo) — but block any in-repo deploy.env explicitly so a
+# stray copy can never be committed.
+deploy.env
+# Allow committed env *templates* (no secrets).
+!apps/web/.env.example
+prototype/backend/clashcoach_dev.db
+
+# Pipeline data outputs (not source)
+prototype/backend/ingested_transcripts.json
+*_analysis.txt
+*_cr_summary.txt
+test_qwenvl.py
+test_sonnet_transcript.py
+*.db

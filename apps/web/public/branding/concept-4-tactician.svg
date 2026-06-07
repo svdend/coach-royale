@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Concept 4: Tactician
+  A chess rook crossed with a battlement crown. Reads as a tower piece
+  (Clash adjacent) and as a chess piece (tactical thinking, coaching).
+  Strong, blocky, masculine without being aggressive. Excellent at
+  16px because the silhouette is a single monolithic shape with
+  clear notch/crenellations.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="CoachRoyale tactician mark">
+  <title>CoachRoyale</title>
+  <!-- Plate -->
+  <rect x="2" y="2" width="60" height="60" rx="14" ry="14" fill="#0a0a23"/>
+
+  <!-- Rook body. Composed as one path for crisp rendering.
+       Battlements (top crenellations): four notches, three blocks.
+       Body: tapered shaft, flared base. -->
+  <path d="M16 12
+           h6 v6 h6 v-6
+           h6 v6 h6 v-6
+           h6
+           v8
+           l-2 4
+           v18
+           l3 4
+           v6
+           h-32
+           v-6
+           l3 -4
+           v-18
+           l-2 -4
+           z"
+        fill="#f0c544"
+        stroke="#0a0a23"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+
+  <!-- Mid-body groove: a horizontal band that carries a single jewel.
+       Acts as a royal crest. -->
+  <rect x="20" y="32" width="24" height="8" rx="1" fill="#d4a017"/>
+  <!-- Crest gem -->
+  <path d="M32 32
+           l4 4
+           l-4 4
+           l-4 -4
+           z"
+        fill="#6b46c1"
+        stroke="#0a0a23"
+        stroke-width="1"
+        stroke-linejoin="round"/>
+
+  <!-- Subtle vertical body shading: a single thin gold line on the
+       right side suggests dimension without using gradients. -->
+  <line x1="44" y1="24" x2="44" y2="32" stroke="#d4a017" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="44" y1="40" x2="44" y2="50" stroke="#d4a017" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Base plinth highlight -->
+  <line x1="18" y1="56" x2="46" y2="56" stroke="#d4a017" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

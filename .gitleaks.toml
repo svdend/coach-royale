@@ -1,0 +1,18 @@
+title = "CoachRoyale secret scanning"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Repository placeholders and test fixtures that are not live secrets"
+regexes = [
+  '''anon-key''',
+  '''ci-placeholder''',
+  '''dummy''',
+  '''example''',
+  '''placeholder''',
+  '''relay-secret''',
+  '''test''',
+  '''webhook-secret''',
+  '''your-''',
+]
