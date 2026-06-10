@@ -122,6 +122,16 @@ function renderToml(varEntries, outputPath) {
     "[ai]",
     'binding = "AI"',
     "",
+    // Rate limit the unauthenticated relay routes (/api/player/*, /api/clan/*,
+    // /api/cards) in production too — they spend the relay's Supercell API
+    // quota. Mirrors the binding in the base wrangler.toml; the runtime no-ops
+    // when unbound, so omitting this silently removed production rate limiting.
+    "[[unsafe.bindings]]",
+    'name = "RELAY_LIMITER"',
+    'type = "ratelimit"',
+    'namespace_id = "1001"',
+    "simple = { limit = 30, period = 60 }",
+    "",
     ...aiEventsBinding,
     "[vars]",
     ...varEntries.map(([key, value]) => `${key} = ${escapeTomlString(value)}`),
