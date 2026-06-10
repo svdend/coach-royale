@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { ChevronDown, ChevronUp, Download, Shield, ShieldAlert, Trash2 } from 'lucide-react';
 
@@ -66,13 +66,19 @@ export function PrivacyCenter({ userId }: PrivacyCenterProps) {
     enabled: Boolean(userId),
   });
 
-  useEffect(() => {
-    const data = settingsQuery.data;
-    if (!data) return;
-    setRetentionDays(data.data_retention_days);
-    setAcknowledgePrivacy(checkboxIsChecked(data.privacy_policy_accepted_at));
-    setAcknowledgeByok(checkboxIsChecked(data.byok_local_storage_notice_accepted_at));
-  }, [settingsQuery.data]);
+  // Sync form state from freshly loaded settings as a render-time
+  // adjustment (React's "adjust state when props change" pattern) rather
+  // than an effect, so the form reflects new data in the same render.
+  const settingsData = settingsQuery.data;
+  const [prevSettingsData, setPrevSettingsData] = useState(settingsData);
+  if (prevSettingsData !== settingsData) {
+    setPrevSettingsData(settingsData);
+    if (settingsData) {
+      setRetentionDays(settingsData.data_retention_days);
+      setAcknowledgePrivacy(checkboxIsChecked(settingsData.privacy_policy_accepted_at));
+      setAcknowledgeByok(checkboxIsChecked(settingsData.byok_local_storage_notice_accepted_at));
+    }
+  }
 
   const saveMutation = useMutation({
     mutationFn: updatePrivacySettings,

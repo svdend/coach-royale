@@ -73,6 +73,7 @@ function parseJsonPayload<T>(payload: unknown, schema: z.ZodType<T>, fallbackMes
     if (error instanceof z.ZodError) {
       throw new Error(
         `${fallbackMessage}: invalid response payload (${describeSchemaError(error)})`,
+        { cause: error },
       );
     }
     throw error;

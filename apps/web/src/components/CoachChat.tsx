@@ -174,12 +174,16 @@ export function CoachChat({ playerTag }: CoachChatProps) {
   const abortRef = useRef<AbortController | null>(null);
 
   // Reset thread state when the player tag changes (user searched for a
-  // different player). Keeps conversations siloed per account.
-  useEffect(() => {
+  // different player). Keeps conversations siloed per account. Done as a
+  // render-time adjustment (React's "adjust state when props change"
+  // pattern) instead of an effect so the reset lands in the same render.
+  const [prevPlayerTag, setPrevPlayerTag] = useState(playerTag);
+  if (prevPlayerTag !== playerTag) {
+    setPrevPlayerTag(playerTag);
     setThreadId(loadThreadId(playerTag));
     setMessages([]);
     setPendingTrace([]);
-  }, [playerTag]);
+  }
 
   // Cancel any in-flight request on unmount to prevent setState-after-unmount
   // and to close the server-side Anthropic connection early.
@@ -188,12 +192,19 @@ export function CoachChat({ playerTag }: CoachChatProps) {
   }, []);
 
   // Fetch the beta opt-in state for Pro users when the master flag is on.
-  // Free users and flag-off sessions skip the round-trip entirely.
-  useEffect(() => {
-    if (!agentEnabled() || !isPro) {
+  // Free users and flag-off sessions skip the round-trip entirely. The
+  // reset on losing eligibility happens as a render-time adjustment; the
+  // effect only owns the async fetch.
+  const betaLaneEnabled = agentEnabled() && isPro;
+  const [prevBetaLaneEnabled, setPrevBetaLaneEnabled] = useState(betaLaneEnabled);
+  if (prevBetaLaneEnabled !== betaLaneEnabled) {
+    setPrevBetaLaneEnabled(betaLaneEnabled);
+    if (!betaLaneEnabled) {
       setBetaState(null);
-      return;
     }
+  }
+  useEffect(() => {
+    if (!betaLaneEnabled) return;
     let cancelled = false;
     (async () => {
       try {
@@ -208,7 +219,7 @@ export function CoachChat({ playerTag }: CoachChatProps) {
     return () => {
       cancelled = true;
     };
-  }, [isPro]);
+  }, [betaLaneEnabled]);
 
   async function handleToggleBeta(next: boolean) {
     if (betaToggling) return;

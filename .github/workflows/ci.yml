@@ -194,6 +194,9 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: ${{ env.NODE_VERSION }}
+          # setup-node v5+ enables npm caching by default and fails when no
+          # lockfile exists; this job runs at the repo root, which has none.
+          package-manager-cache: false
 
       - name: Scan tracked files for committed secrets
         run: npm run secret:scan
