@@ -5,7 +5,10 @@ import { resolveAuthRedirectUrl } from '../auth';
 describe('resolveAuthRedirectUrl', () => {
   it('prefers an explicit configured redirect URL', () => {
     expect(
-      resolveAuthRedirectUrl('https://coach-royale.com/', 'https://preview.coach-royale-web.pages.dev'),
+      resolveAuthRedirectUrl(
+        'https://coach-royale.com/',
+        'https://preview.coach-royale-web.pages.dev',
+      ),
     ).toBe('https://coach-royale.com');
   });
 
