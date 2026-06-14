@@ -24,7 +24,7 @@
     "@types/node": "^25.9.2",
     "prettier": "^3.8.3",
     "typescript": "^5.9.3",
-    "vitest": "^4.1.1",
+    "vitest": "^4.1.8",
     "wrangler": "^4.46.0"
   }
 }
